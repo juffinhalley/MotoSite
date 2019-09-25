@@ -1,0 +1,19 @@
+.added-new-mm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 35px 0;
+	max-width: 450px;
+	background-color: map-get($colors, white);
+	filter: drop-shadow(0 0 2px rgba(51, 51, 51, 0.15));
+	margin: 0 auto;
+
+	&__icon {
+		margin-bottom: 20px;
+		svg {
+			width: 36px;
+			height: 27px;
+			fill: map-get($colors, red);
+		}
+	}
+}

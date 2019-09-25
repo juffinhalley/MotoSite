@@ -1,0 +1,125 @@
+.user-filter-bottom {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&--users {
+		.user-filter-bottom {
+			&__left-col {
+				padding: 30px 0;
+				border-right: 1px solid map-get($colors, lGrey);
+				@include media(psh) {
+					width: 100%;
+					border-right: 1px solid map-get($colors, lGrey);
+				}
+			}
+
+			&__menu {
+				display: none;
+			}
+		}
+	}
+
+	&__top {
+		padding: 10px;
+		background-color: map-get($colors, lGrey);
+		position: relative;
+
+		@include media(psh) {
+			padding-right: 50px;
+		}
+	}
+
+	&__users {
+		width: 100%;
+		height: 100%;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+
+		@include media(psh) {
+			justify-content: flex-end;
+		}
+
+		span {
+			&:first-child {
+				margin-right: 4px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				text-align: right;
+
+				@include media(psh) {
+					width: calc(100% - 105px);
+				}
+			}
+		}
+	}
+
+	&__triangle {
+		display: none;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 34px 52px;
+		border-color: transparent transparent map-get($colors, grey4) transparent;
+
+		@include media(psh) {
+			display: block;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column-reverse;
+		width: 100%;
+		margin-bottom: 40px;
+
+		@include media(psh) {
+			flex-direction: row;
+		}
+	}
+
+	&__left-col {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		border-left: 1px solid map-get($colors, lGrey);
+		border-bottom: 1px solid map-get($colors, lGrey);
+		border-right: 1px solid map-get($colors, lGrey);
+		padding: 30px 20px;
+
+		@include media(psh) {
+			width: calc(100% - 240px);
+			border-right: none;
+		}
+	}
+
+	&__user-items {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+
+	&__filter-showmore {
+		margin: 0 auto;
+	}
+
+	&__menu {
+		width: 100%;
+		padding: 30px 20px;
+		min-height: 100%;
+		background-color: map-get($colors, grey4);
+
+		@include media(psh) {
+			width: 240px;
+		}
+	}
+}

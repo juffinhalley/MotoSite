@@ -1,0 +1,236 @@
+.user-records-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #eee;
+	width: 100%;
+	max-width: 725px;
+	margin-bottom: 30px;
+
+	@include media(psh) {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 5px 10px 5px;
+		width: 100%;
+		align-self: stretch;
+
+		@include media(psh) {
+			padding: 30px 30px 10px 20px;
+			width: calc(100% - 200px);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 10px;
+
+		@include media(psh) {
+			flex-direction: row;
+			margin-bottom: 0;
+		}
+	}
+
+	&__name {
+		display: inline-flex;
+		justify-content: center;
+		font-size: 16px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		text-align: center;
+
+		@include media(psh) {
+			justify-content: start;
+			max-width: 80%;
+			margin-right: 30px;
+			text-align: left;
+		}
+	}
+
+	&__time {
+		display: inline-flex;
+		justify-content: center;
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		text-align: center;
+
+		@include media(psh) {
+			justify-content: start;
+			max-width: 20%;
+			text-align: left;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 200px;
+		height: 100%;
+		overflow: hidden;
+		flex-shrink: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+	}
+	&__counters-button {
+		display: flex;
+		align-items: center;
+		border-top: 1px solid #eee;
+		position: relative;
+		padding-top: 10px;
+		width: 100%;
+		margin-top: auto;
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 44px;
+		height: 44px;
+		border: 1px solid #eee;
+		border-radius: 50%;
+		position: absolute;
+		right: 0;
+		top: -22px;
+		background-color: white;
+		cursor: pointer;
+		text-decoration: none;
+		transition: all 0.3s linear;
+
+		svg {
+			width: 20px;
+			height: 10px;
+			fill: map-get($colors, grey);
+			transition: all 0.3s linear;
+			z-index: 3;
+		}
+	}
+
+	&__counters {
+		display: flex;
+		align-items: center;
+		line-height: 110%;
+	}
+
+	&--type-2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		max-width: 682px;
+		border-radius: 10px 10px 0 0;
+		margin-top: calc(30px + 45px);
+		border: 1px solid map-get($colors, lGrey);
+		z-index: 0;
+		@include media(ms) {
+			flex-direction: row;
+			padding-left: 125px;
+			border-radius: 40px 10px 0 40px;
+			margin: 30px 0 8px;
+		}
+
+		&__image {
+			position: absolute;
+			margin: 0 auto;
+			top: -45px;
+			display: flex;
+			z-index: 1;
+			width: 90px;
+			height: 90px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100%;
+			overflow: hidden;
+			flex-shrink: 0;
+			@include media(ms) {
+				top: -12px;
+				left: -1px;
+				margin: 0;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 58px 0 15px;
+			@include media(ms) {
+				padding: 13px 10px 15px 4px;
+				align-items: stretch;
+			}
+		}
+
+		&__name {
+			display: flex;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 100%;
+			text-align: center;
+			padding: 0 5px;
+			@include media(ms) {
+				text-align: left;
+				padding: 0;
+			}
+		}
+
+		&__time {
+			display: flex;
+			font-size: 12px;
+			font-weight: 300;
+			margin-top: 12px;
+			line-height: 100%;
+		}
+
+		&__wrapper-sb {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 13px;
+			align-self: stretch;
+			@include media(ms) {
+				margin-left: auto;
+			}
+		}
+
+		&__wrapper-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 5px;
+			@include media(ms) {
+				margin-bottom: 0;
+			}
+		}
+
+		&__button {
+			display: flex;
+			position: relative;
+			flex-grow: 0;
+			bottom: -1px;
+			@include media(ms) {
+				right: -1px;
+			}
+		}
+	}
+}

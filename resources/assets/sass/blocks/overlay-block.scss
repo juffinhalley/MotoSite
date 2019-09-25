@@ -1,0 +1,15 @@
+.overlay-block {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+}

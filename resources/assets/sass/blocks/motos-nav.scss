@@ -1,0 +1,127 @@
+.motos-nav {
+
+	&--with-menu {
+		.motos-nav {
+			&__top-row {
+				@include media(sm) {
+					padding-right: 52px;
+				}
+			}
+		}
+	}
+
+	&__top-row {
+		background-color: map-get($colors, lGrey);
+		padding: 10px;
+		position: relative;
+
+		@include media(sm) {
+			padding-right: 20px;
+		}
+	}
+
+	&__numb-of-motos {
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		display: inline-flex;
+    justify-content: center;
+
+		@include media(sm) {
+			width: 100%;
+		}
+
+		span {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: right;
+			padding-right: 5px;
+
+			@include media(sm) {
+				width: 20%;
+			}
+		}
+
+		@include media(sm) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__opened-sort {
+		background-color: map-get($colors, grey4);
+		padding: 20px 10px 0 10px;
+		display: none;
+
+		&.is-active {
+			display: block;
+		}
+	}
+
+	& [class*="__button-"] {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		bottom: 0;
+		right: 0;
+		cursor: pointer;
+		user-select: none;
+		display: none;
+
+		&:hover {
+			.motos-nav {
+				&__triangle-open-menu {
+					border-color: transparent transparent map-get($colors, dark) transparent;
+					filter: drop-shadow(0px 0px 1px map-get($colors, dark));
+				}
+			}
+		}
+
+		&.is-active {
+			display: flex;
+		}
+	}
+
+	&__triangle-open-menu {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 34px 52px;
+		border-color: transparent transparent map-get($colors, grey4) transparent;
+	}
+
+	&__button-open-menu {
+		svg {
+			width: 17px;
+			height: 17px;
+			fill: map-get($colors, white);
+			margin-right: -48px;
+	    margin-bottom: -8px;
+	    z-index: 3;
+		}
+
+		& .motos-nav {
+			&__triangle-open-menu {
+				border-color: transparent transparent map-get($colors, grey) transparent;
+			}
+		}
+	}
+
+	&__button-close-menu {
+		svg {
+			width: 17px;
+			height: 1px;
+			fill: map-get($colors, grey2);
+			margin-right: -48px;
+	    margin-bottom: -8px;
+	    z-index: 3;
+		}
+
+		& .motos-nav {
+			&__triangle-open-menu {
+				border-color: transparent transparent map-get($colors, grey4) transparent;
+			}
+		}
+	}
+}

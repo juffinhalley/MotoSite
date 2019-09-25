@@ -1,0 +1,28 @@
+.widget-button-block {
+	display: flex;
+	align-items: center;
+	margin: 0 7px;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+	line-height: 110%;
+	font-weight: 300;
+	color: map-get($colors, grey);
+
+	svg {
+		margin-right: 6px;
+		width: 15px;
+		height: 15px;
+		fill: map-get($colors, grey);
+		flex-shrink: 0;
+	}
+
+	span {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&--nomgl {
+		margin-left: 0;
+	}
+}

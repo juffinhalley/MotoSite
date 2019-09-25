@@ -1,0 +1,115 @@
+.gm-style {
+	& > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) {
+		& > div {
+			& > div:nth-child(1),
+			& > div:nth-child(3) {
+				display: none!important;
+			}
+		}
+	}
+}
+
+.gm-style-iw {
+	display: flex!important;
+	justify-content: center!important;	
+	overflow: visible!important;
+
+	&::before {
+		position: absolute;
+	    width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 20px 10px 0 10px;
+		border-color: #e3e2e2 transparent transparent transparent;
+	    content: "";
+	    left: 50%;
+	    top: 100%;
+	    transform: translateX(-50%);
+	}
+}
+
+.iw-block {
+	width: 250px;
+	background-color: #e3e2e2;
+	border-radius: 8px;
+	position: relative;
+
+	&__top-row {
+		padding: 6px 46px 6px 14px;
+		min-height: 30px;
+		background-color: #dcdcdc;
+		position: relative;
+		border-radius: 8px 8px 0 0;
+	}
+
+	&__name {
+		text-decoration: none;
+		font-size: 14px;
+		color: map-get($colors, dark);
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		width: 100%;
+	}
+
+	&__rating {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 40px;
+		height: 30px;
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		font-size: 16px;
+		color: map-get($colors, dark);
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		background-color: #c9c7c7;
+		border-radius: 0 6px 0 0;
+	}
+
+	&__content {
+		padding: 8px 14px 12px;
+	}
+
+	&__addres {
+		text-decoration: none;
+		color: #757575;
+		font-size: 12px;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		margin-bottom: 6px;
+		display: inline-block;
+	}
+
+	&__user-rating {
+		font-size: 14px;
+		color: map-get($colors, dark);
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		margin-bottom: 5px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__alert {
+		font-size: 10px;
+		color: #757575;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		line-height: 100%;	
+		align-items: center;
+	}
+
+	&__feeds {
+		text-align: right;
+		font-weight: 300;
+		font-size: 12px;
+		color: #757575;
+		letter-spacing: 0.05em;
+		display: block;
+	}
+}

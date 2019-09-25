@@ -1,0 +1,58 @@
+
+// !!!! МАЛЕНЬКИЙ ГАЙД !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
+// Все стили блоков у которых клас не заканчивается на ...-block лежат
+// в цссниках с названием ...-block в котором лежит блок (по разметке выше смотри)
+//
+// ПРИМЕР:
+//
+// <div class="container">
+//		<div class="materials-block">
+//			<div class="materials-item"></div>
+//		</div>
+// </div>
+//
+// Стили materials-item лежат в цсснике materials-block
+//
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@import "page-header-block";
+@import "profile-block";
+@import "cog-decor-block";
+@import "header-widget-block";
+@import "logo-block";
+@import "decored-search-block";
+@import "copyrighting-block";
+@import "vm-logo-block";
+@import "page-footer-block";
+@import "submenu-block";
+@import "main-menu-block";
+@import "page-aside-block";
+@import "banner-block";
+@import "announces-block";
+@import "sort-widget-block";
+@import "mini-descr-block";
+@import "descr-slider-block";
+@import "mini-item-block";
+@import "aside-map-block";
+@import "choices";
+@import "search-block";
+@import "burger-block";
+@import "avatar-block";
+@import "profile-bar-block";
+@import "user-info-block";
+@import "what-is-block";
+@import "user-photos-block";
+@import "user-profile-block";
+@import "change-button-block";
+@import "assets-button-block";
+@import "user-tech-block";
+@import "announce-item-block";
+@import "widget-button-block";
+@import "user-announces-block";
+@import "bottom-widgets-block";
+@import "user-events-block";
+@import "events-block";
+@import "articles-item-block";
+@import "user-articles-block";
+@import "battles-block";
+@import "map-marks";

@@ -1,0 +1,237 @@
+.owner-item {
+  display: flex;
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid #eee;
+  padding: 20px 0 15px 20px;
+
+  &--user-filter {
+    max-width: 544px;
+    padding-right: 5px;
+
+    .owner-item {
+      &__left-col {
+        margin-right: 20px;
+        position: relative;
+        width: calc(100% - 170px);
+        &::before {
+          position: absolute;
+          content: "";
+          top: 40px;
+          right: 0;
+          width: 1px;
+          height: calc(100% - 40px);
+          background-color: map-get($colors, lGrey);
+        }
+      }
+    }
+  }
+
+  &__left-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top-row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-rep {
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 25px;
+    background-color: map-get($colors, white);
+    padding: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.15);
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      color: map-get($colors, dark);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__image-top {
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 25px;
+    background-color: map-get($colors, white);
+    padding: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(51, 51, 51, 0.15);
+
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      color: map-get($colors, dark);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    svg {
+      width: 12px;
+      height: 14px;
+      fill: map-get($colors, orange);
+      margin-right: 14px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 100px);
+    padding: 5px 30px;
+  }
+
+  &__name {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+
+    span {
+      font-size: 14px;
+      font-weight: normal;
+      color: map-get($colors, dark);
+      margin-right: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    svg {
+      width: 14px;
+      height: 20px;
+      fill: map-get($colors, orange);
+      flex-shrink: 0;
+    }
+  }
+
+  &__info-item {
+    display: inline-flex;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 10px;
+
+    span {
+      font-size: 12px;
+      font-weight: 300;
+      color: map-get($colors, grey2);
+      width: calc(100% - 16px);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: map-get($colors, grey2);
+      margin-right: 4px;
+    }
+
+    a {
+      text-decoration: none;
+      color: map-get($colors, dark);
+
+      &:hover {
+        font-size: 12px;
+        font-weight: 300;
+        color: map-get($colors, dark);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 15px 20px 0 0;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 1px;
+      background-color: #eee;
+    }
+  }
+
+  &__date {
+    font-size: 12px;
+    font-weight: 300;
+    color: map-get($colors, grey2);
+  }
+
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 170px;
+  }
+
+  &__statistic {
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+  }
+
+  &__statistic-item {
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 300;
+    color: map-get($colors, grey2);
+    margin-bottom: 10px;
+    span {
+      &:first-child {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &__online {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 300;
+    color: map-get($colors, grey2);
+    top: -12px;
+    right: 15px;
+  }
+
+}

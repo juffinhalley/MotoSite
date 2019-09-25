@@ -1,0 +1,161 @@
+.main-menu-block {
+	margin-bottom: 44px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	width: 100%;
+	max-width: 300px;
+	height: 100vh;
+	overflow: auto;
+	z-index: 120;
+	padding-bottom: 70px;
+	transition: transform 0.2s ease;
+	transform: translateX(-100%);
+
+	@include media(defp) {
+		position: relative;
+		height: auto;
+		z-index: 1;
+		max-width: 100%;
+		transform: translateX(0);
+		padding-bottom: 0;
+	}
+
+	&.is-active {
+		transform: translateX(0);
+	}
+
+	&__resp-logo {
+		width: 100%;
+		justify-content: center;	
+		align-items: center;
+		padding: 20px 10px 10px;
+		margin-bottom: 10px;
+		display: flex;
+
+		@include media(defp) {
+			display: none;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 4px;
+		top: 4px;
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+
+		@include media(defp) {
+			display: none;
+		}
+	}
+	
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__list-item {
+		width: 100%;
+		background-color: #fff;
+	}
+
+	&__list-link {
+		padding-left: 18px;
+		display: flex;
+		align-items: center;
+		position: relative;
+		height: 40px;
+		text-decoration: none;
+		font-size: 16px;
+		color: #333333;
+		font-weight: 300;
+		backface-visibility: hidden;
+		user-select: none;
+
+		&::before {
+			position: absolute;
+			background-color: #d32f2f;
+			content: "";
+			width: 3px;
+			height: 100%;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+			z-index: 2;
+		}
+
+		&::after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			transform: scaleX(0);
+			content: "";
+			background-color: #fff3f3;
+			transition: transform 0.2s ease, background-color 0.3s ease;
+			transform-origin: left;
+		}
+
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+
+		&:active {
+
+			&::after {
+				background-color: #eaeaea;
+			}
+		}
+
+		&.is-active {
+			pointer-events: none;
+
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+
+	&__list-icon {
+		position: relative;
+		z-index: 3;
+		margin-right: 25px;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: #757575;
+		}
+	}
+
+	&__list-text {
+		position: relative;
+		z-index: 3;
+	}
+}
+
+.global-wrapper--grey {
+	.main-menu-block {
+		background-color: #eeeeee;
+
+		&__list-item {
+			background-color: #eeeeee;
+		}
+	}
+}
+

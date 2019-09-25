@@ -1,0 +1,39 @@
+.moto-image {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&__flag {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(51, 51, 51, 0.8);
+			border-radius: 0 0 90px 0;
+			display: flex;
+			padding: 4px 17px 14px 4px;
+			color: map-get($colors, white);
+			font-size: 16px;
+			letter-spacing: 0.05em;
+			font-weight: 300;
+			line-height: 100%;
+			width: 66px;
+			height: 50px;
+			align-items: center;
+
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: map-get($colors, white);
+				margin-right: 6px;
+				margin-left: 6px;
+			}
+		}
+}

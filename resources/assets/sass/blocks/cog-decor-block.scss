@@ -1,0 +1,23 @@
+.cog-decor-block {
+	display: flex;
+	align-items: center;
+	color: #757575;
+	transition: color 0.2s ease;
+
+	svg {
+		fill: currentColor;
+	}
+
+	&__cog {
+		width: 20px;
+		height: 20px;
+		margin-right: 3px;
+		transition: transform 0.3s ease;
+	}
+
+	&__arrow {			
+		width: 9px;
+		height: 9px;
+		transition: transform 0.2s ease;
+	}
+}

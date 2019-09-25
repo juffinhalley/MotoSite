@@ -1,0 +1,95 @@
+.avatar-block {
+	position: relative;
+
+	&__user-descr {
+		position: absolute;
+		left: calc(100% + 5px);
+		bottom: 40px;
+	}
+
+	&__image {
+		width: 150px;
+		height: 150px;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:hover {
+			.change-button-block {
+				background-color: rgba(51,51,51,1);
+			}
+		}
+	}
+
+	&__user-descr {
+		background-color: rgba(40,40,40,0.5);
+		border-radius: 0 5px 0 0;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		min-width: 200px;
+		user-select: none;
+	}
+
+	&__user-descr-name {
+		font-size: 14px;
+		color: map-get($colors, white);
+		margin-bottom: 12px;
+		line-height: 110%;
+	}
+
+	&__user-descr-city {
+		margin-left: auto;
+		color: map-get($colors, white);
+		margin-bottom: 12px;
+		font-size: 12px;
+		line-height: 110%;
+
+		a {
+			color: map-get($colors, white);
+			text-decoration: none;
+
+			&:hover {
+				color: map-get($colors, lGrey);
+
+				svg {
+					fill: map-get($colors, lGrey);
+				}
+			}
+		}
+
+		svg {
+			fill: map-get($colors, white);
+			width: 15px;
+			height: 15px;
+		}
+	}
+
+	&__user-descr-status {
+		color: map-get($colors, white);
+		font-size: 12px;
+		line-height: 110%;
+
+		a {
+			color: map-get($colors, white);
+			text-decoration: none;
+
+			&:hover {
+				color: map-get($colors, lGrey);
+
+				svg {
+					fill: map-get($colors, lGrey);
+				}
+			}
+		}
+
+		svg {
+			fill: map-get($colors, white);
+			width: 15px;
+			height: 15px;
+		}
+	}
+}

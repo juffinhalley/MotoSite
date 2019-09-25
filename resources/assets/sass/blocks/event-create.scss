@@ -1,0 +1,279 @@
+.event-create {
+	background-color: map-get($colors, lGrey3);
+	width: 100%;
+
+	&--lead {
+		.event-create {
+			&__name {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__title-wrapper {
+		display: flex;
+		flex-direction: column;
+		height: 80px;
+		width: 100%;
+
+		@include media(psh) {
+			flex-direction: row;
+			height: 40px;
+		}
+	}
+
+	&__title-left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: map-get($colors, white);
+		text-align: center;
+		width: 100%;
+		font-size: 16px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		line-height: 1.2;
+		height: 40px;
+
+		@include media(psh) {
+			width: 75%;
+			height: auto;
+			border-bottom: 1px solid map-get($colors, grey);
+		}
+	}
+
+	&__title-right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid map-get($colors, grey);
+		border-bottom: none;
+		text-align: center;
+		width: 100%;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		line-height: 1.2;
+		height: 40px;
+
+		@include media(psh) {
+			width: 25%;
+			height: auto;
+		}
+	}
+
+	&__wrapper {
+		border: 1px solid map-get($colors, grey);
+		border-top: none;
+		padding: 10px 10px 10px 10px;
+
+		@include media(psh) {
+			padding: 20px 30px 30px 30px;
+		}
+	}
+
+	&__time-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+		@include media(psh) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__date {
+		width: 100%;
+		height: 40px;
+		margin-bottom: 20px;
+
+		@include media(psh) {
+			max-width: 360px;
+			margin-right: 10px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__time {
+		width: 100%;
+		height: 40px;
+
+		@include media(psh) {
+			max-width: 360px;
+		}
+	}
+
+	&__geo {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	&__name {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	&__publish {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	&__download {
+		display: flex;
+		justify-content: center;
+
+		@include media(psh) {
+			justify-content: flex-start;
+		}
+	}
+
+	&__textarea {
+		margin-bottom: 30px;
+	}
+
+	&__new-textarea {
+		background-color: map-get($colors, grey3);
+		padding: 10px 15px;
+		position: relative;
+		width: calc(100% + 20px);
+		transform: translateX(-10px);
+		margin: 10px 0;
+
+		@include media(psh) {
+			padding: 20px 30px;
+			width: calc(100% + 60px);
+			transform: translateX(-30px);
+		}
+	}
+
+	&__textarea-delete {
+		position: absolute;
+		top: -7px;
+		right: -7px;
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: map-get($colors, grey);
+		}
+	}
+
+	&__slider {
+		display: flex;
+		margin-bottom: 20px;
+	}
+
+	&__slider-content {
+		display: flex;
+		overflow: auto;
+		margin-right: 10px;
+		padding: 10px 0;
+
+		&::-webkit-scrollbar {
+			height: 4px;
+		}
+	}
+
+	&__slider-item {
+		flex-shrink: 0;
+		margin-right: 30px;
+	}
+
+	&__slider-decore {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 120px;
+		padding-right: 10px;
+		border-right: 1px solid map-get($colors, grey);
+		margin-left: auto;
+		position: relative;
+		flex-shrink: 0;
+		margin: 10px 0;
+
+		&::before, &::after {
+			position: absolute;
+			content: '';
+			right: 0;
+			width: 20px;
+			height: 1px;
+			background-color: map-get($colors, grey);
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+	}
+
+	&__slider-label {
+		display: inline-flex;
+		justify-content: flex-end;
+		align-items: center;
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+
+		span {
+			display: none;
+			@include media(psh) {
+				display: inline-flex;
+			}
+		}
+
+		a {
+			flex-shrink: 0;
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: map-get($colors, grey);
+			margin-left: 10px;
+		}
+	}
+
+	&__actions {
+		@include media(psh) {
+			transform: translateX(-20px);
+		}
+	}
+
+	&__alert {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		height: 50px;
+		margin: 30px 0;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 10px;
+
+		@include media(psh) {
+			justify-content: flex-end;
+			padding-left: 0;
+		}
+	}
+
+	&__downloaded {
+		display: flex;
+		justify-content: center;
+
+		@include media(psh) {
+			justify-content: flex-start;
+		}
+	}
+}

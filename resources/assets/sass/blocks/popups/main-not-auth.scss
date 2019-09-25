@@ -1,0 +1,25 @@
+.main-not-auth {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 340px;
+	padding: 40px 0;
+	position: relative;
+	background-color: map-get($colors, white);
+	filter: drop-shadow(0 0 2px rgba(51, 51, 51, 0.15));
+	border-radius: 4px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		margin: 0 auto;
+		top: -35px;
+		transition: .3s;
+    border-style: solid;
+    width: 0px;
+    height: 0px;
+    line-height: 0px;
+    border-width: 0px 14px 35px 14px;
+    border-color: transparent transparent #ffffff transparent;
+	}
+}

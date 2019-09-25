@@ -1,0 +1,19 @@
+.search-block {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	left: 160px;
+	right: 160px;
+	background-color: red;
+	top: 40px;
+	transition: visibility 0s 0.2s ease, opacity 0.2s 0s ease;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 150;
+
+	&.is-active {
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0s 0s ease, opacity 0.2s 0.01s ease;
+	}
+}

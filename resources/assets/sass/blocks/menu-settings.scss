@@ -1,0 +1,42 @@
+.menu-settings {
+	width: 100%;
+	background-color: map-get($colors, lGrey);
+
+	&__language-item {
+		width: 50px;
+		height: 50px;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		background-color: transparent;
+		cursor: pointer;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+
+		@include media(def) {
+			width: 100%;
+			height: 20px;
+		}
+
+		&.is-active {
+			background-color: map-get($colors, white);
+			color: map-get($colors, dark);
+		}
+
+		&:hover {
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include media(def) {
+			display: block;
+		}
+	}
+}

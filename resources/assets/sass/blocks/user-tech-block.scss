@@ -1,0 +1,132 @@
+.user-tech-block {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	padding: 20px 15px 36px 28px;
+
+	&__stage-decor {
+		height: 100%;
+		width: 5px;
+		background-image: linear-gradient(rgba(189,189,189,1) 81%, rgba(189,189,189,0) 0%);
+		background-position: right;
+		background-size: 33px 24px;
+		background-repeat: repeat-y;
+		position: absolute;
+		left: 22px;
+		top: 0;
+		z-index: 1;
+	}
+
+	&__stages {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding-top: 46px;
+		max-height: 600px;
+		overflow: auto;
+	}
+
+	&__stage-end {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		background-color: rgba(189,189,189,1);
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		color: map-get($colors, white);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		line-height: 110%;
+		position: absolute;
+		bottom: calc(100% - 10px);
+		left: 0;
+	}
+
+	&__stage-items {
+		backface-visibility: hidden;
+		position: relative;
+		z-index: 5;
+	}
+
+	&__stage-start {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		background-color: rgba(189,189,189,1);
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		color: map-get($colors, white);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		line-height: 110%;
+		position: absolute;
+		top: calc(100% - 5px);
+		left: 0;
+	}
+
+	&__item {
+		position: relative;
+		height: 72px;
+		width: 300px;
+		display: flex;
+		margin-right: 28px;
+		padding-left: 50px;
+		padding-right: 58px;
+
+		&:after {
+			position: absolute;
+			width: calc(100% - 25px);
+			height: 2px;
+			content: "";
+			background-color: #bdbdbd;
+			left: 25px;
+		    top: calc(50% + 5px);
+			transform: translateY(-50%);
+		}
+	}
+
+	&__item-name {
+		color: map-get($colors, grey2);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		line-height: 110%;
+		text-align: center;
+		text-decoration: none;
+		margin: 0 auto;
+		cursor: default;
+	    height: 32px;
+	    display: flex;
+	    align-items: flex-end;
+	    z-index: 5;
+	    justify-content: center;	
+	}
+
+	&__item-photo {
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		right: 0;
+	    top: calc(50% + 5px);
+		transform: translateY(-50%);
+		z-index: 5;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__stage {
+		position: relative;
+		z-index: 2;
+		margin-bottom: 40px;
+	}
+}
+
+a.user-tech-block__item-name {
+	text-decoration: underline;
+	cursor: pointer;
+}

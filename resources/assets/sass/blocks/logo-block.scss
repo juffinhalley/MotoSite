@@ -1,0 +1,17 @@
+.logo-block {
+	width: 112px;
+	height: 28px;
+
+	@include media(defp) {
+		width: 160px;
+		height: 40px;
+	}
+}
+
+a.logo-block {
+	&:hover {
+ 		svg {
+ 			fill: #757575;
+ 		}
+	}
+}

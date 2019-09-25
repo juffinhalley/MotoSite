@@ -1,0 +1,100 @@
+.moto-site-top-slider {
+	width: 100%;
+	padding-top: 30px;
+	border-top: 1px solid map-get($colors, lGrey);
+	padding-bottom: 50px;
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		padding: 5px 10px;
+		background-color: transparent;
+		border: solid map-get($colors, lGrey);
+		border-width: 1px 1px 2px 1px;
+		position: relative;
+		transition: all 0.3s linear;
+		cursor: pointer;
+		user-select: none;
+
+		span {
+			font-size: 14px;
+			font-weight: 300;
+			color: map-get($colors, grey);
+			margin: 0 auto;
+		}
+
+		&:hover, &.is-active {
+			background-color: map-get($colors, white);
+			box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+			span {
+				font-weight: normal;
+				color: map-get($colors, dark);
+			}
+
+			.moto-site-top-slider__button-icon-first,
+			.moto-site-top-slider__button-icon-second {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__button-icon-first {
+		position: absolute;
+		top: 25%;
+		left: 10px;
+		opacity: 0;
+		transition: all 0.3s linear;
+
+		svg {
+			fill: map-get($colors, grey2);
+		}
+
+		&--helmet {
+			svg {
+				width: 19px;
+				height: 20px;
+			}
+		}
+
+		&--callendar {
+			svg {
+				width: 18px;
+				height: 20px;
+			}
+		}
+
+		&--users {
+			svg {
+				width: 19px;
+				height: 20px;
+			}
+		}
+
+		&--marker {
+			svg {
+				width: 15px;
+				height: 20px;
+			}
+		}
+	}
+
+	&__button-icon-second {
+		position: absolute;
+		top: 6px;
+		left: 22px;
+		opacity: 0;
+		transition: all 0.3s linear;
+
+		svg {
+			width: 15px;
+			height: 15px;
+			fill: map-get($colors, orange);
+			stroke: map-get($colors, white);
+			stroke-width: 3px;
+		}
+	}
+
+}

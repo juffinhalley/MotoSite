@@ -1,0 +1,205 @@
+.places-nav {
+
+	&--with-menu {
+		.places-nav {
+			&__bottom-row {
+				padding-right: 10px;
+				@include media(md) {
+					padding-right: 52px;
+				}
+			}
+		}
+	}
+
+	&__selected-tab {
+		width: 200px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 14px;
+		border: 1px solid #eee;
+		font-weight: 300;
+		font-size: 14px;
+		color: map-get($colors, grey2);
+		flex-shrink: 0;
+		user-select: none;
+		cursor: pointer;
+
+		&:hover {
+			background-color: map-get($colors, llGrey);
+		}
+
+		&.is-active {
+			background-color: map-get($colors, llGrey);
+			color: map-get($colors, black);
+
+			& .places-nav {
+				&__selected-tab-icon {
+					svg {
+						fill: map-get($colors, grey2);
+					}
+				}
+			}
+		}
+	}
+
+	&__selected-tab-icon {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		border-left: 1px solid #eee;
+
+		svg {
+			width: 18px;
+			height: 12px;
+			fill: map-get($colors, grey);
+		}
+	}
+
+	&__my-places-tab {
+		width: 200px;
+		height: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 14px;
+		padding-right: 10px;
+		border: 1px solid #eee;
+		font-weight: 300;
+		font-size: 14px;
+		color: map-get($colors, grey2);
+		flex-shrink: 0;
+		user-select: none;
+		cursor: pointer;
+
+		svg {
+			width: 13px;
+			height: 18px;
+			fill: map-get($colors, grey);
+		}
+
+		&:hover {
+			background-color: map-get($colors, llGrey);
+		}
+
+		&.is-active {
+			background-color: map-get($colors, llGrey);
+			color: map-get($colors, black);
+
+			svg {
+				fill: map-get($colors, grey2);
+			}
+		}
+	}
+
+	&__numb-of-places {
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		display: inline-flex;
+    justify-content: flex-end;
+		width: 100%;
+
+		span {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			text-align: right;
+			padding-right: 5px;
+
+			@include media(md) {
+				width: 20%;
+			}
+		}
+	}
+
+	&__bottom-row {
+		background-color: map-get($colors, llGrey);
+		padding: 10px;
+		position: relative;
+		@include media(md) {
+			padding-right: 20px;
+		}
+	}
+
+	&__opened-sort {
+		background-color: map-get($colors, grey4);
+		padding: 20px 10px 0 10px;
+		display: none;
+
+		&.is-active {
+			display: block;
+		}
+	}
+
+	& [class*="__button-"] {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		bottom: 0;
+		right: 0;
+		cursor: pointer;
+		user-select: none;
+		display: none;
+
+		&:hover {
+			.places-nav {
+				&__triangle-open-menu {
+					border-color: transparent transparent map-get($colors, dark) transparent;
+					filter: drop-shadow(0px 0px 1px map-get($colors, dark));
+				}
+			}
+		}
+
+		&.is-active {
+			display: flex;
+		}
+	}
+
+	&__triangle-open-menu {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 34px 52px;
+		border-color: transparent transparent map-get($colors, grey4) transparent;
+	}
+
+	&__button-open-menu {
+		svg {
+			width: 17px;
+			height: 17px;
+			fill: map-get($colors, white);
+			margin-right: -48px;
+	    margin-bottom: -8px;
+	    z-index: 3;
+		}
+
+		& .places-nav {
+			&__triangle-open-menu {
+				border-color: transparent transparent map-get($colors, grey) transparent;
+			}
+		}
+	}
+
+	&__button-close-menu {
+		svg {
+			width: 17px;
+			height: 1px;
+			fill: map-get($colors, grey2);
+			margin-right: -48px;
+	    margin-bottom: -8px;
+	    z-index: 3;
+		}
+
+		& .places-nav {
+			&__triangle-open-menu {
+				border-color: transparent transparent map-get($colors, grey4) transparent;
+			}
+		}
+	}
+}

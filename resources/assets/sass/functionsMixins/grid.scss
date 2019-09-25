@@ -1,0 +1,223 @@
+
+@mixin helpers-cols($columns: 5, $points: ()) {
+	// ячейки
+	._col {
+		&-auto {
+			@include flex-cell-width(auto);
+			min-width: 1px; // IE11 fix
+		}
+
+		// Создаем классы по схеме ._col-3
+		@for $i from 1 through $columns {
+			$width: percentage(1 / $i);
+
+			&-#{$i} {
+				@include flex-cell-width($width);
+			}
+		}
+	}
+
+	// с медиа-запросами по схеме ._lg-col-auto
+	@each $point, $size in $points {
+		@include media($size) {
+			._#{$point}-col-auto {
+				@include flex-cell-width(auto);
+				min-width: 1px; // IE11 fix
+			}
+		}
+	}
+
+	// Создаем классы по схеме ._lg-col-3
+	@for $i from 1 through $columns {
+		$width: percentage(1 / $i);
+		@each $point, $size in $points {
+			@include media($size) {
+				._#{$point}-col-#{$i} {
+					@include flex-cell-width($width);
+				}
+			}
+		}
+	}
+}
+
+@mixin flex-cell-width($width) {
+	flex-basis: $width;
+	width: $width;
+	@if ($width == auto) {
+		max-width: none;
+	} @else {
+		max-width: $width;
+	}
+}
+
+@mixin _helpers-grid-h-space($gap, $size, $mod: "") {
+	&--#{$mod}hspace-#{$gap} {
+		margin-left: -$size;
+
+		> * { 
+			padding-left: $size;
+		}
+	}
+}
+
+@mixin _helpers-grid-h-spaces($gap, $size, $mod: "") {
+	&--#{$mod}hspaces-#{$gap} {
+		margin-left: -($size / 2);
+		margin-right: -($size / 2);
+
+		> * { 
+			padding-left: ($size / 2);
+			padding-right: ($size / 2);
+		}
+	}
+}
+
+@mixin _helpers-grid-v-space($gap, $size, $mod: "") {
+	&--#{$mod}vspace-#{$gap} {
+		> * { 
+			padding-bottom: $size;
+		}
+	}
+}
+
+@mixin _helpers-grid-v-spaces($gap, $size, $mod: "") {
+	&--#{$mod}vspaces-#{$gap} {
+		> * { 
+			padding-top: ($size / 2);
+			padding-bottom: ($size / 2);
+		}
+	}
+}
+
+@mixin _helpers-grid-space($gap, $size, $mod: "") {
+	&--#{$mod}space-#{$gap} {
+		margin-left: -$size;
+
+		> * { 
+			padding-left: $size;
+			padding-bottom: $size;
+		}
+	}
+}
+
+@mixin _helpers-grid-spaces($gap, $size, $mod: "") {
+	&--#{$mod}spaces-#{$gap} {
+		margin-left: -($size / 2);
+		margin-right: -($size / 2);
+
+		> * { 
+			padding: ($size / 2);
+		}
+	}
+}
+
+@mixin helpers-grid($columns: 12, $points: (), $gutters: ()) {
+	.gcell {
+		min-width: 0;
+	}
+
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		@each $gap, $value in $gutters {
+			@include _helpers-grid-h-space($gap, $value);
+			// @include _helpers-grid-h-spaces($gap, $value);
+			@include _helpers-grid-v-space($gap, $value);
+			// @include _helpers-grid-v-spaces($gap, $value);
+			@include _helpers-grid-space($gap, $value);
+			// @include spaces($gap, $value);
+
+			@each $point, $size in $points {
+				@include media($size) {
+					@include _helpers-grid-h-space($gap, $value, $point + $sep);
+					// @include _helpers-grid-h-spaces($gap, $value, $point + $sep);
+					@include _helpers-grid-v-space($gap, $value, $point + $sep);
+					// @include _helpers-grid-v-spaces($gap, $value, $point + $sep);
+					@include _helpers-grid-space($gap, $value, $point + $sep);
+					// @include _helpers-grid-spaces($gap, $value, $point + $sep);
+				}
+			}
+		}
+
+		@for $i from 1 through $columns {
+			$width: percentage($columns / $i / $columns);
+
+			&--#{$i} {
+				& > * { 
+					@include flex-cell-width($width);
+				}
+			}
+
+			@each $point, $size in $points {
+				@include media($size) {
+					&--#{$point}-#{$i} {
+						& > * { 
+							@include flex-cell-width($width);
+						}
+					}
+				}
+			}
+		}
+
+		&--auto {
+			& > * { 
+				@include flex-cell-width(auto);
+				min-width: 1px; // IE11 fix
+			}
+		}
+
+		@each $point, $size in $points {
+			@include media($size) {
+				&--#{$point}-auto {
+					& > * { 
+						@include flex-cell-width(auto);
+						min-width: 1px; // IE11 fix
+					}
+				}
+			}
+		}
+	}
+
+	.gcell {
+		min-height: 1px;
+		box-sizing: border-box;
+
+		&--auto {
+			@include flex-cell-width(auto);
+			min-width: 1px; // IE11 fix
+		}
+
+		@each $point, $size in $points {
+			@include media($size) {
+				&--#{$point}-auto {
+					@include flex-cell-width(auto);
+					min-width: 1px; // IE11 fix
+				}
+			}
+		}
+
+		@for $i from 1 through $columns {
+			$width: percentage($i / $columns);
+
+			&--#{$i} {
+				@include flex-cell-width($width);
+			}
+		}
+
+		@each $point, $size in $points {
+			@include media($size) {
+				@for $i from 1 through $columns {
+					$width: percentage($i / $columns);
+
+					&--#{$point}-#{$i} {
+						@include flex-cell-width($width);
+					}
+				}
+			}
+		}
+	}
+}

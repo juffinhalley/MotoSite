@@ -1,0 +1,66 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.breadcrumbs {
+	position: relative;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	font-size: 14px;
+	margin: 0 0 0 30px;
+
+	> * { // sass-lint:disable-line no-universal-selectors
+		margin: 0 .5em .5em 0;
+
+		@include media(md, max) {
+			&:not(:last-child) {
+				&:not(:nth-last-child(2)) {
+					display: none;
+				}
+			}
+
+			&:nth-last-child(2)::after {
+				content: '\21d0\00a0';
+				margin-left: .5em;
+			}
+		}
+
+		@include media(md) {
+			&:not(:last-child)::after {
+				content: '»';
+				margin-left: .5em;
+				font-size: 20px;
+			}
+		}
+	}
+
+	li {
+		display: inline-flex;
+		align-items: center;
+
+		span {
+			font-size: 14px;
+		}
+	}
+
+	a {
+		color: #000;
+		text-decoration: none;
+			font-size: 14px;
+
+		&[href] {
+			color: #757575;
+
+			&:hover {
+				color: map-get($colors, red);
+			}
+
+			&:active {
+				color: map-get($colors, black);
+			}
+		}
+	}
+}

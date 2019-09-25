@@ -1,0 +1,45 @@
+@mixin _helpers-text-generate($mod: "") {
+  // sass-lint:disable no-important
+  ._#{$mod}text-left {
+    text-align: left !important;
+  }
+
+  ._#{$mod}text-right {
+    text-align: right !important;
+  }
+
+  ._#{$mod}text-center {
+    text-align: center !important;
+  }
+
+  ._#{$mod}overflow-hidden {
+    overflow: hidden;
+  }
+
+  ._#{$mod}ellipsis {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  ._#{$mod}ellipsis-free {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  // sass-lint:enable no-important
+}
+
+/// Хелперы управления текстом
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-text ($points: ()) {
+  @include _helpers-text-generate();
+  @each $point, $size in $points {
+    @include media($size) {
+      @include _helpers-text-generate($point + $sep);
+    }
+  }
+}
+@include helpers-text($helpers-breakpoints);

@@ -1,0 +1,18 @@
+.place-info {
+	display: flex;
+	flex-direction: column;
+
+	&__text {
+		display: inline-flex;
+		padding-left:30px;
+		padding-right: 10px;
+		margin-bottom: 30px;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+	}
+
+	&__slider {
+		margin-bottom: 20px;
+	}
+}

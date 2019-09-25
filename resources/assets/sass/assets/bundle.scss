@@ -1,0 +1,38 @@
+
+@import "buttons";
+@import "sliders";
+@import "forms";
+@import "select";
+@import "checkboxes";
+@import "popups";
+@import "spacers";
+
+.expand-image {
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	padding: 5px;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+
+	svg {
+		width: 20px;
+		height: 20px;
+		fill: map-get($colors, white);
+	}
+}
+
+.disclaimer-image {
+	position: absolute;
+	bottom: 10px;
+	left: 5px;
+	padding: 5px;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+
+	svg {
+		width: 20px;
+		height: 20px;
+		fill: map-get($colors, white);
+	}
+}

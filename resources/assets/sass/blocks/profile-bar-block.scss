@@ -1,0 +1,92 @@
+.profile-bar-block {
+	display: flex;
+	flex-direction: column;
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		width: 14.28%;
+		border: 1px solid #bdbdbd;
+		height: 40px;
+		padding: 0 8px;
+		cursor: pointer;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+		background-color: #fff;
+		position: relative;
+		overflow: hidden;
+		user-select: none;
+
+		span {
+			position: relative;
+			z-index: 1;
+			margin: 0 auto;
+			color: #757575;
+			transition: color 0.2s ease;
+		}
+
+		svg {
+			width: 22px;
+			height: 22px;
+			fill: #757575;
+			position: relative;
+			z-index: 1;
+			transition: fill 0.2s ease;
+		}
+
+		&.is-active {
+			border-bottom: 1px solid #fff;
+			pointer-events: none;
+
+			span {
+				color: #333333;
+			}
+
+			svg {
+				fill: #333333;
+			}
+		}
+
+		&:hover {
+			transition: background-color 0.3s ease;
+			background-color: #f0f0f0;
+
+			span {
+				color: #333333;
+			}
+
+			svg {
+				fill: #333333;
+			}
+		}
+	}
+
+	&__item {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+
+		&.is-active {
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+		}
+	}
+
+	&__items {
+		display: flex;
+		position: relative;
+		border-left: 1px solid #bdbdbd;
+		border-right: 1px solid #bdbdbd;
+		border-bottom: 1px solid #bdbdbd;
+	}
+}

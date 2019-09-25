@@ -1,0 +1,279 @@
+.motoclub-item-block {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 220px;
+	text-decoration: none;
+
+	&--topslider {
+		width: 255px;
+
+		&:hover {
+			.motoclub-item-block {
+				&__wrapper {
+					box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.15);
+				}
+
+				&__image::before {
+					opacity: 1;
+				}
+
+				&__hover-arrow {
+					color: map-get($colors, red);
+				}
+			}
+		}
+
+		.motoclub-item-block {
+			&__wrapper {
+				transition: all 0.3s linear;
+			}
+
+			&__image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 160px;
+				overflow: hidden;
+				position: relative;
+				z-index: 1;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				&::before {
+					position: absolute;
+					content: "";
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					background-color: rgba(0, 0, 0, 0.6);
+					z-index: 1;
+					transition: opacity 0.3s linear;
+				}
+			}
+
+			&__label {
+				position: absolute;
+				display: flex;
+				flex-direction: column-reverse;
+				align-items: center;
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, dark);
+				width: 151px;
+				height: 151px;
+				background-color: map-get($colors, white);
+				border-radius: 50%;
+				filter:drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.1));
+				top: -110px;
+				right: -46px;
+				clip: rect(110px, 105px, auto, auto);
+				left: auto;
+				z-index: 3;
+				transition: all 0.3s linear;
+
+				span {
+					display: flex;
+					align-items: center;
+					font-size: 16px;
+					font-weight: normal;
+					color: map-get($colors, dark);
+					padding-bottom: 12px;
+					padding-right: 21px;
+
+					svg {
+						width: 15px;
+						height: 15px;
+						fill: map-get($colors, orange);
+					}
+				}
+			}
+
+			&__descr {
+				width: 100%;
+				background-color: #fff;
+				height: 80px;
+				padding: 15px 20px;
+				padding-bottom: 10px;
+				border: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				text-align: left;
+				position: relative;
+			}
+
+			&__name {
+				font-weight: 300;
+				font-size: 16px;
+				width: 100%;
+				padding-bottom: 12px;
+				margin-bottom: 12px;
+				color: #000;
+				letter-spacing: 0.05em;
+				text-align: left;
+				border-bottom: 1px solid #f4f4f4;
+			}
+
+			&__loc {
+				font-size: 14px;
+				color: #757575;
+				letter-spacing: 0.05em;
+				font-weight: 300;
+				margin: 0;
+			}
+
+			&__button {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				background-color: map-get($colors, white);
+				width: 45px;
+				height: 45px;
+				right: 20px;
+				top: 21px;
+				box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+			}
+
+			&__hover-arrow {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				color: map-get($colors, grey);
+				box-sizing: border-box;
+				width: 8px;
+				height: 8px;
+				border-width: 2px 2px 0 0;
+				border-style: solid;
+				transform: rotate(45deg);
+				margin-left: 11px;
+
+				&::before {
+					content: "";
+					box-sizing: border-box;
+					right: 0;
+					top: -1.5px;
+					position: absolute;
+					height: 2px;
+					box-shadow: inset 0 0 0 32px;
+					transform: rotate(-45deg);
+					width: 20px;
+					transform-origin: right top;
+				}
+			}
+
+		}
+	}
+
+	&--moto {
+		width: 230px;
+
+		.motoclub-item-block {
+			&__image {
+				position: relative;
+			}
+
+			&__descr {
+				border: none;
+				padding: 5px 15px;
+				height: 50px;
+			}
+		}
+	}
+	// MAIN
+	&__image {
+		width: 100%;
+		height: 170px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 10px;
+		width: 100px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		background-color: #fff;
+		padding: 4px 10px;
+		font-size: 16px;
+		color: #333333;
+		letter-spacing: 0.05em;
+
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: #ffc107;
+			margin-right: 5px;
+		}
+	}
+
+	&__name {
+		font-weight: 300;
+		font-size: 14px;
+		width: 100%;
+		margin-bottom: 4px;
+		color: #333333;
+		letter-spacing: 0.05em;
+		text-align: center;
+	}
+
+	&__loc {
+		font-size: 12px;
+		color: #757575;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		margin-left: auto;
+		margin-top: auto;
+
+		svg {
+			margin-right: 5px;
+			width: 8px;
+			fill: #757575;
+			height: 12px;
+		}
+	}
+
+	&__descr {
+		width: 100%;
+		background-color: #fff;
+		height: 60px;
+		padding: 8px 20px;
+		border-bottom: 1px solid #e6e6e6;
+		border-right: 1px solid #e6e6e6;
+		border-left: 1px solid #e6e6e6;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&:hover {
+		.motoclub-item-block {
+			&__name {
+				color: map-get($colors, red);
+			}
+
+			&__loc {
+				color: map-get($colors, red);
+
+				svg {
+					fill: map-get($colors, red);
+				}
+			}
+		}
+	}
+}

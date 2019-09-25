@@ -1,0 +1,51 @@
+.logbook-record-slide {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 25px 0 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-right: 1px solid map-get($colors, grey);
+	position: relative;
+
+	@include media(psh) {
+		padding-left: 30px;
+		padding-right: 50px;
+	}
+
+	&::after {
+		position: absolute;
+		content: "";
+		width: 20px;
+		height: 1px;
+		top: 0;
+		right: 0;
+		background-color: map-get($colors, grey);
+	}
+
+	&::before {
+		position: absolute;
+		content: "";
+		width: 20px;
+		height: 1px;
+		bottom: 0;
+		right: 0;
+		background-color: map-get($colors, grey);
+	}
+
+	&__sign {
+		position: absolute;
+		content: "";
+		transform: rotate(90deg);
+		transform-origin: left top 0;
+		top: 50%;
+		right: -75px;
+		font-weight: normal;
+		font-size: 12px;
+		color: map-get($colors, dark);
+
+		@include media(psh) {
+			transform: none;
+			right: -80px;
+		}
+	}
+}

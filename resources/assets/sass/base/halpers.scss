@@ -1,0 +1,283 @@
+// Width and height
+
+._w100 {
+	width: 100%;
+}
+
+._h42 {
+	height: 42px;
+}
+
+._h40 {
+	height: 40px;
+}
+
+// Margins
+
+._mgla {
+	margin-left: auto;
+}
+
+._mgra {
+	margin-right: auto;
+}
+
+._mgl10 {
+	margin-left: 10px;
+}
+
+._mgl28 {
+	margin-left: 28px;
+}
+
+._mgb30 {
+	margin-bottom: 30px;
+}
+._mgb120 {
+	margin-bottom: 120px;
+}
+
+._mgr18 {
+	margin-right: 18px;
+}
+
+._mgb40 {
+	margin-bottom: 40px;
+}
+
+._mgb44 {
+	margin-bottom: 44px;
+}
+
+._mgb20 {
+	margin-bottom: 20px;
+}
+
+._mgb26 {
+	margin-bottom: 26px;
+}
+
+._mgb10 {
+	margin-bottom: 10px;
+}
+._mgb12 {
+	margin-bottom: 12px;
+}
+
+._mgr10 {
+	margin-right: 10px;
+}
+
+._mgb6 {
+	margin-bottom: 6px;
+}
+
+._mgb55 {
+	margin-bottom: 55px;
+}
+
+._mgr18 {
+	margin-right: 18px;
+}
+
+._mgba {
+	margin-bottom: auto;
+}
+
+._nomg {
+	margin: 0;
+}
+
+._nomgl {
+	margin-left: 0;
+}
+
+// Paddings
+
+._padb8 {
+	padding-bottom: 8px;
+}
+
+._padtb15 {
+	padding: 15px 0;
+}
+
+._pad18 {
+	padding: 18px;
+}
+
+._padlr25 {
+	padding: 0 25px;
+}
+
+._padt30 {
+	padding-top: 30px;
+}
+
+._padb20 {
+	padding-bottom: 20px;
+}
+
+._padl25 {
+	padding-left: 25px;
+}
+
+
+
+// Flex
+
+._df {
+	display: flex;
+}
+
+._jcc {
+	justify-content: center;
+}
+
+._fdc {
+	flex-direction: column;
+}
+
+._aic {
+	align-items: center;
+}
+
+._jcfe {
+	justify-content: flex-end;
+}
+
+._flxsh0 {
+	flex-shrink: 0;
+}
+
+._aifs {
+	align-items: flex-start;
+}
+
+._dinone {
+	display: none;
+}
+
+//Borders
+
+._border1lgr {
+	border: 1px solid map-get($colors, lGrey);
+}
+
+._borderB1lgr {
+	border-bottom: 1px solid map-get($colors, lGrey);
+}
+
+._border1gr {
+	border: 1px solid map-get($colors, grey);
+}
+
+._borderLR1gr {
+	border-left: 1px solid map-get($colors, grey);
+	border-right: 1px solid map-get($colors, grey);
+}
+
+._borderTBD1gr {
+	border-top: 1px dashed map-get($colors, grey);
+	border-bottom: 1px dashed map-get($colors, grey);
+}
+
+._borderB1gr {
+	border-bottom: 1px solid map-get($colors, grey);
+}
+
+._gborder {
+	border: 1px solid #eeeeee;
+}
+
+._gborder-top {
+	border-top: 1px solid #eeeeee;
+}
+
+._gborder-right {
+	border-right: 1px solid #eeeeee;
+}
+
+._gborder-bottom {
+	border-bottom: 1px solid #eeeeee;
+}
+
+._gborder-left {
+	border-left: 1px solid #eeeeee;
+}
+
+._br100 {
+	border-radius: 100%;
+}
+
+._borderT0 {
+	border-top: 0;
+}
+
+._borderB0 {
+	border-bottom: 0;
+}
+
+// Background
+
+._grey-bg {
+	background-color: #f8f8f8;
+}
+
+._lGrey-bg {
+	background-color: map-get($colors, lGrey);
+}
+
+._lGrey3-bg {
+	background-color: map-get($colors, lGrey3);
+}
+
+._grey3-bg {
+	background-color: map-get($colors, grey3);
+}
+
+._grey4-bg {
+	background-color: map-get($colors, grey4);
+}
+// Hovers
+._hBgLgr {
+	&:hover {
+		background-color: map-get($colors, lGrey);
+	}
+}
+// Another
+
+._tear {
+	text-align: right;
+}
+
+._tac {
+	text-align: center;
+}
+
+._lh100 {
+	line-height: 100%;
+}
+
+._tdn {
+	text-decoration: none;
+}
+
+._cp {
+	cursor: pointer;
+}
+
+._hr {
+    border-color: transparent;
+    border-bottom-color: #eee;
+}
+
+._tab-active {
+	background-color: map-get($colors, lGrey);
+}
+
+._hr-dash {
+	width: 10px;
+	height: 1px;
+	background-color: #bdbdbd;
+}

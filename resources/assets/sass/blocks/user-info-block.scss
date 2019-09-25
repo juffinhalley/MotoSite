@@ -1,0 +1,97 @@
+.user-info-block {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 30px 10px;
+	position: relative;
+
+	&__row {
+		display: flex;
+		padding: 13px 26px;
+		border-bottom: 1px solid map-get($colors, lGrey);
+	}
+
+	&__content {
+		margin-bottom: 10px;
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__name {
+		width: 240px;
+		padding-right: 14px;
+		flex-shrink: 0;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+	}
+
+	&__descr {
+		font-weight: 300;
+		color: map-get($colors, dark);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+
+		a {
+			color: map-get($colors, dark);
+			text-decoration: none;
+
+			&:hover {
+				color: map-get($colors, red);
+			}
+		}
+	}
+
+	&__data {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		background-color: map-get($colors, lGrey2);
+		padding: 18px 65px 30px;
+		z-index: 25;		
+		height: 100%;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.2s 0s ease, visibility 0s 0.2s ease;
+
+		&--inner {
+			top: -39px;
+			height: calc(100% + 39px);
+		}
+
+		&.is-active {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity 0.2s 0.01s ease, visibility 0s 0s ease;
+		}
+	}
+
+	&__data-title {
+		text-align: center;
+		margin-bottom: 28px;
+		font-size: 14px;
+		color: #333;
+		letter-spacing: 0.05em;
+	}
+
+	&__data-row {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		.form-item {
+			width: calc(50% - 35px);
+		}
+
+		&--w100 {
+			.form-item {
+				width: 100%;
+			}
+		}
+	}
+}

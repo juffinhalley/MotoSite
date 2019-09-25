@@ -1,0 +1,27 @@
+.container {
+	width: 100%;
+	flex-basis: 100%;
+	max-width: calc($view-size + #{$view-gap * 2});
+	padding-left: $view-gap;
+	padding-right: $view-gap;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media(xl) {
+		max-width: calc(#{vw($view-size)} + #{$view-gap * 2});
+	}
+
+	@include media(dt) {
+		max-width: calc($view-size + #{$view-gap * 2});
+	}
+
+	&--no-gap {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--full {
+		max-width: 100%;
+	}
+}

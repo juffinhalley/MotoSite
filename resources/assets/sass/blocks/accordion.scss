@@ -1,0 +1,91 @@
+.accordion {
+
+	&__item {
+		width: 100%;
+		margin-bottom: 10px;
+
+		&.is-active {
+			.accordion {
+				&__button {
+					color: #333333;
+					border-color: #bdbdbd;
+					background-color: #eeeeee;
+				}
+
+				&__content {
+					background-color: #eeeeee;
+				}
+
+				&__icon {
+					transform: scaleY(-1);
+
+					svg {
+						fill: #757575;
+					}
+				}
+			}
+		}
+	}
+
+	&__button {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		padding: 12px 20px;
+		border-bottom: 1px solid #eeeeee;
+		background-color: #fff;
+		transition: background-color 0.2s ease, color 0.2s ease;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #eeeeee;
+
+			.accordion {
+				&__title {
+					color: #333;
+				}
+
+				&__icon {
+					svg {
+						fill: #757575;
+					}
+				}
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		z-index: 5;
+		margin-left: auto;
+		width: 20px;
+		display: flex;
+		justify-content: flex-end;	
+		align-items: center;
+		transition: transform 0.2s ease;
+
+		svg {
+			width: 8px;
+			height: 9px;
+			transition: fill 0.2s ease;
+			fill: #bdbdbd;
+		}
+	}
+
+	&__title {
+		font-size: 14px;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		position: relative;
+		z-index: 5;
+		transition: color 0.2s ease;
+		color: #757575;
+	}
+
+	&__content {
+		width: 100%;
+		padding: 14px 20px;
+		background-color: #fff;
+		transition: background-color 0.2s ease;
+	}
+}

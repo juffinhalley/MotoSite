@@ -1,0 +1,235 @@
+.logbook-list-item {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 27px;
+
+	@include media(psh) {
+		flex-direction: row;
+		align-items: stretch;
+		padding-bottom: 30px;
+	}
+
+	&__decore {
+		position: absolute;
+		z-index: 0;
+		height: calc(100% - 77px);
+		width: 100%;
+		border-radius: 10px;
+		border: 1px solid map-get($colors, lGrey);
+		bottom: 0;
+		right: 0;
+
+		@include media(psh) {
+			width: 85%;
+			height: calc(100% - 10px);
+		}
+	}
+
+	&__image {
+		display: flex;
+		z-index: 1;
+		width: 154px;
+		height: 154px;
+		align-items: center;
+		justify-content: center;
+		border-radius: 100%;
+		overflow: hidden;
+		flex-shrink: 0;
+
+		@include media (psh) {
+			width: 254px;
+			height: 254px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 15px 10px 0 10px;
+		z-index: 1;
+
+		@include media(psh) {
+			padding: 32px 15px 0 28px;
+		}
+	}
+
+	&__wrapper-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 15px;
+
+		@include media(psh) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	&__name {
+		font-size: 16px;
+		font-weight: 300;
+		margin-bottom: 5px;
+		overflow: hidden;
+		text-align: center;
+
+		@include media(psh) {
+			margin-bottom: 0;
+			text-align: left;
+		}
+	}
+
+	&__date {
+		font-size: 12px;
+		font-weight: 300;
+		overflow: hidden;
+		margin-left: 10px;
+	}
+
+	&__text {
+		font-size: 14px;
+		font-weight: 300;
+		margin-bottom: 25px;
+		overflow: hidden;
+		text-align: center;
+
+		@include media(psh) {
+			text-align: left;
+		}
+	}
+
+	&__wrapper-social-button {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
+
+		@include media(psh) {
+			flex-direction: row;
+		}
+	}
+
+	&__more-widget {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		@include media(psh) {
+			margin-bottom: 0;
+		}
+	}
+
+	&--square {
+		padding-bottom: 0;
+
+		@include media(psh) {
+			padding-bottom: 0;
+		}
+
+		.logbook-list-item {
+			&__wrapper {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				padding: 15px 10px 10px 10px;
+				z-index: 1;
+
+				@include media(psh) {
+					padding: 28px 30px 10px 20px;
+				}
+			}
+
+			&__image {
+				display: flex;
+				z-index: 1;
+				width: 195px;
+				height: 156px;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+				flex-shrink: 0;
+				border-radius: 0;
+
+				@include media (psh) {
+					width: 300px;
+					height: 240px;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			&__decore {
+				position: absolute;
+				z-index: 0;
+				height: 100%;
+				width: 100%;
+				border-radius: 0;
+				border: 1px solid map-get($colors, lGrey);
+				bottom: 0;
+				right: 0;
+
+				@include media(psh) {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			&__counters-button {
+				display: flex;
+				align-items: center;
+				border-top: 1px solid #eee;
+				position: relative;
+				padding-top: 10px;
+				width: 100%;
+				margin-top: auto;
+			}
+
+			&__button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 44px;
+				height: 44px;
+				border: 1px solid #eee;
+				border-radius: 50%;
+				position: absolute;
+				right: 0;
+				top: -22px;
+				background-color: white;
+				cursor: pointer;
+				text-decoration: none;
+				transition: all 0.3s linear;
+
+				svg {
+					width: 20px;
+					height: 10px;
+					fill: map-get($colors, grey);
+					transition: all 0.3s linear;
+					z-index: 3;
+				}
+			}
+
+			&__counters {
+				display: flex;
+				align-items: center;
+				line-height: 110%;
+			}
+		}
+	}
+}

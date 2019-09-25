@@ -1,0 +1,120 @@
+.black-list-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 4px;
+	padding: 10px;
+	background-color: map-get($colors, grey4);
+	box-shadow: inset 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+	@include media(md) {
+		flex-direction: row;
+		padding: 0;
+		padding-right: 25px;
+		border-radius: 0;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	&__restore {
+		border-top: 1px solid map-get($colors, lGrey);
+		border-bottom: 1px solid map-get($colors, lGrey);
+		padding: 10px 0;
+		@include media(md) {
+			padding: 10px 0;
+		}
+
+		& .black-list-item__checkbox {
+			display: none;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 10px;
+		@include media(md) {
+			flex-direction: row;
+			margin-right: auto;
+			margin-bottom: 0;
+		}
+	}
+
+	&__image {
+		width: 60px;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin-bottom: 10px;
+		@include media(md) {
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__user-wrapper {
+		display: flex;
+		flex-direction: column;
+		@include media(md) {
+			padding: 10px 5px 10px 20px;
+		}
+	}
+
+	&__user {
+		font-size: 14px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		text-decoration: none;
+		text-align: center;
+		margin-bottom: 10px;
+
+		@include media(md) {
+			text-align: left;
+		}
+	}
+
+	&__geodate-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__geo {
+		margin-right: 25px;
+		text-decoration: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 140px;
+
+		svg {
+			width: 8px;
+			height: 12px;
+			flex-shrink: 0;
+			margin-right: 7px;
+			fill: map-get($colors, grey2);
+		}
+
+		span {
+			font-size: 12px;
+			font-weight: 300;
+			color: map-get($colors, grey2);
+		}
+	}
+
+	&__date {
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+	}
+}

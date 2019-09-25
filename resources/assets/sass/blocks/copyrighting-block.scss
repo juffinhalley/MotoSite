@@ -1,0 +1,11 @@
+.copyrighting-block {
+	font-size: 14px;
+	color: #95989a;
+	font-weight: 300;
+	text-align: center;
+	letter-spacing: 0.05em;
+
+	@include media(ms) {
+		text-align: left;
+	}
+}

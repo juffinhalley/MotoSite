@@ -1,0 +1,236 @@
+.best-materials-item {
+	cursor: pointer;
+	user-select: none;
+	text-decoration: none;
+
+	&:hover {
+		& .best-materials-item {
+			&__wrapper {
+				box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.15);
+			}
+
+			&__image::before {
+				opacity: 1;
+			}
+
+			&__hover-video {
+				opacity: 1;
+			}
+
+			&__rep {
+				left: 0;
+				opacity: 1;
+			}
+
+			&__hover-counters {
+				opacity: 1;
+			}
+
+			&__hover-title {
+				opacity: 1;
+			}
+
+			&__descr {
+				background: map-get($colors, white);
+			}
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 5px;
+		color: map-get($colors, dark);
+		font-size: 14px;
+		text-align: center;
+		line-height: 1.2;
+		font-weight: normal;
+		border: 1px solid map-get($colors, lGrey);
+	}
+
+	&__wrapper {
+		transition: all 0.3s linear;
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 160px;
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+			z-index: 1;
+			transition: opacity 0.3s linear;
+		}
+	}
+
+	&__hover-video {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 3;
+		width: 40px;
+		height: 40px;
+		border: 4px solid rgba(255, 255, 255, 0.7);
+		border-radius: 50%;
+		opacity: 0;
+		transition: opacity 0.3s linear;
+
+		svg {
+			width: 18px;
+			height: 18px;
+			margin-left: 5px;
+			fill: rgba(255, 255, 255, 0.7);
+		}
+	}
+
+	&__user-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		background-color: map-get($colors, llGrey);
+		width: 100%;
+		height: 100%;
+		padding: 5px 0;
+	}
+
+	&__user {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__user-name {
+		font-size: 14px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		text-align: center;
+	}
+
+	&__user-geo {
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+
+		svg {
+			width: 8px;
+			height: 12px;
+			fill: map-get($colors, grey2);
+		}
+	}
+
+	&__rep {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		width: 70px;
+		height: 25px;
+		background-color: map-get($colors, white);
+		top: 10px;
+		left: -70px;
+		opacity: 0;
+		z-index: 3;
+		transition: all 0.3s linear;
+	}
+
+	&__descr {
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		padding: 18px 5px;
+		text-align: center;
+		background: transparent;
+	}
+
+	&__hover-counters {
+		position: absolute;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		top: 10px;
+		margin: 0 auto;
+		opacity: 0;
+		transition: opacity 0.3s linear;
+		z-index: 3;
+
+		& .widget-button-block {
+			color: map-get($colors, white);
+
+			svg {
+				fill: map-get($colors, white);
+			}
+		}
+	}
+
+	&__hover-title {
+		position: absolute;
+		top: 50%;
+		margin: 0 auto;
+		opacity: 0;
+		transition: opacity 0.3s linear;
+		z-index: 3;
+	}
+
+	&__hover-text {
+		color: map-get($colors, white);
+		font-size: 14px;
+		font-weight: 300;
+		margin-right: 15px;
+	}
+
+	&__hover-arrow {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		color: map-get($colors, white);
+		box-sizing: border-box;
+		width: 8px;
+		height: 8px;
+		border-width: 2px 2px 0 0;
+		border-style: solid;
+		transform: rotate(45deg);
+
+		&::before {
+			content: "";
+			box-sizing: border-box;
+			right: 0;
+			top: -1.5px;
+			position: absolute;
+			height: 2px;
+			box-shadow: inset 0 0 0 32px;
+			transform: rotate(-45deg);
+			width: 20px;
+			transform-origin: right top;
+		}
+	}
+}

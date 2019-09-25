@@ -1,0 +1,71 @@
+.faq-add-question {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f4f4f4;
+	padding: 5px 20px;
+	margin-bottom: 12px;
+	position: relative;
+
+	&__form {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		min-height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s 0s ease, visibility 0s 0.2s ease;
+		z-index: 31;
+		display: flex;
+		flex-direction: column;
+
+		&.is-active {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 0.2s 0.01s ease, visibility 0s 0s ease;
+		}
+	}
+
+	&__form-content {
+		background-color: #f6f6f6;
+		padding: 20px;
+	}
+
+	&__title-row {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 38px;
+		background-color: #fff;
+	}
+
+	&__subtitle {
+		margin-left: auto;
+		margin-top: auto;
+		padding: 4px 38px;
+		height: 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		font-size: 14px;
+		color: map-get($colors, dark);
+		flex-shrink: 0;
+		background-color: #f6f6f6;
+		position: relative;
+		user-select: none;
+	}
+
+	&__title {
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		color: #757575;
+	}
+}

@@ -1,0 +1,279 @@
+.place-top {
+	display: flex;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	padding-left: 30px;
+	width: 100%;
+	background-color: map-get($colors, llGrey);
+
+	&__left-col {
+		display: flex;
+		flex-direction: column;
+		padding-right: 30px;
+		width: calc(100% - 445px);
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		text-align: center;
+		padding: 10px 5px 0 5px;
+		margin-bottom: 15px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__info-item {
+		display: inline-flex;
+		align-items: baseline;
+		margin-bottom: 15px;
+	}
+
+	&__info-type {
+		font-size: 14px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		margin-right: 10px;
+	}
+
+	&__info-rate {
+		display: inline-flex;
+		align-items: baseline;
+		margin-right: 10px;
+
+		svg {
+			width: 15px;
+			height: 15px;
+			fill: map-get($colors, orange);
+			margin: 0 4px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__info-value {
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+	}
+
+	&__fb {
+		width: 100%;
+	}
+
+	&__fb-button {
+		display: flex;
+    align-items: center;
+		.button {
+			&__content {
+				border-color: map-get($colors, grey);
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 5px;
+					height: 11px;
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+
+	&__fb-cont {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		filter: drop-shadow(0 0 10px rgba(51, 51, 51, 0.15));
+	}
+
+	&__fb-cont-top {
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 200px;
+		height: 30px;
+		padding: 5px 20px 5px 15px;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		margin-left: auto;
+		background-color: map-get($colors, white);
+		cursor: pointer;
+
+		svg {
+			width: 5px;
+			height: 11px;
+			fill: map-get($colors, grey2);
+		}
+	}
+
+	&__fb-cont-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: map-get($colors, white);
+		min-height: 62px;
+		width: 100%;
+		padding: 5px 20px;
+	}
+
+	&__fb-cont-bottom-left {
+		display: flex;
+		flex-direction: column;
+		width: calc(100% - 125px);
+	}
+
+	&__fb-cont-tel {
+		display: inline-flex;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		width: 100%;
+	}
+
+	&__contacts-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.button {
+			&__content {
+				border-color: map-get($colors, grey);
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 5px;
+					height: 11px;
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+
+	&__contacts-cont {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		filter: drop-shadow(0 0 10px rgba(51, 51, 51, 0.15));
+		width: 100%;
+		background-color: map-get($colors, white);
+		width: 317px;
+	}
+
+	&__contacts-cont-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 34px;
+		padding: 5px 12px 5px 20px;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, dark);
+		border-bottom: 1px solid map-get($colors, llGrey);
+		width: 100%;
+		cursor: pointer;
+
+		svg {
+			width: 5px;
+			height: 11px;
+			fill: map-get($colors, grey2);
+		}
+	}
+
+	&__contacts-cont-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 13px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		min-height: 60px;
+		padding: 5px 15px;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: calc(100% + 30px + 30px);
+		height: 40px;
+		background-color: map-get($colors, white);
+		transform: translateX(-30px);
+		margin-top: auto;
+	}
+
+	&__right-col {
+		display: flex;
+		flex-direction: column;
+		width: 445px;
+	}
+
+	&__map {
+		display: block;
+		width: 445px;
+		height: calc(100% - 40px);
+		overflow: hidden;
+		text-decoration: none;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__map-geo {
+		display: inline-flex;
+		justify-content: center;
+		align-items: baseline;
+		padding: 10px;
+		width: 100%;
+		height: 40px;
+		border: 1px solid #eee;
+		border-right: none;
+		text-decoration: none;
+
+		span {
+			font-size: 14px;
+			font-weight: normal;
+			color: map-get($colors, grey2);
+		}
+
+		svg {
+			width: 10px;
+			height: 15px;
+			fill: map-get($colors, grey);
+			margin-right: 4px;
+		}
+	}
+
+}

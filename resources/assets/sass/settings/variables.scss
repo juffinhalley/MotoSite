@@ -1,0 +1,94 @@
+$breakpoints: (
+	xs: 375px,
+	sm: 500px,
+	ms: 640px,
+	psh: 732px,
+	md: 768px,
+	defp: 1022px,
+	def: 1024px,
+	lg: 1280px,
+	xl: 1364px,
+	mg: 1440px,
+	dt: 1980px
+);
+
+$gutters: (
+	none: 0,
+	sm: 5px, //5
+	ms: 10px, //10
+	md: 15px, //15
+	def: 20px, //20
+	lg: 25px, //25
+	xl: 30px, //30
+	mg: 40px, //40
+	dt: 2.604vw //50
+);
+
+$devices: (
+	iphone4: "only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)",
+	iphone5: "only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)",
+	iphone6: "only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)",
+	iphone6plus: "only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3)",
+	ipadmini: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+	ipad1: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+	ipad2: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+	ipad3: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)",
+	ipad4: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)"
+);
+
+$orientations: (
+	auto: "only screen and (orientation: auto)",
+	landscape: "only screen and (orientation: landscape)",
+	portrait: "only screen and (orientation: portrait)"
+);
+
+$helpers-breakpoints: (
+	// xs: map-get($breakpoints, xs),
+	sm: map-get($breakpoints, sm),
+	psh: map-get($breakpoints, psh),
+	md: map-get($breakpoints, md),
+	def: map-get($breakpoints, def),
+	lg: map-get($breakpoints, lg)
+);
+
+$helpers-gutters: (
+	none: map-get($gutters, none),
+	sm: map-get($gutters, sm),
+	ms: map-get($gutters, ms),
+	md: map-get($gutters, md),
+	def: map-get($gutters, def),
+	lg: map-get($gutters, lg),
+	xl: map-get($gutters, xl),
+	mg: map-get($gutters, mg)
+);
+
+$colors: (
+	orange: #ffc107,
+	red: #d32f2f,
+	red2: #cc1f30,
+	red3: #fe4e5b,
+	lRed: #fff9f9,
+	grey: #bdbdbd,
+	grey2: #757575,
+	grey3: #e7e7e7,
+	grey4: #e6e6e6,
+	grey5: #95989a,
+	grey6: #dcdcdc,
+	grey7: #595959,
+	lGrey: #eee,
+	lGrey2: #f5f5f5,
+	lGrey3: #f3f3f3,
+	lGrey4: #f2f2f2,
+	lGrey5: #ebebeb,
+	llGrey: #f8f8f8,
+	green: #388e3c,
+	dark: #333,
+	black: #000,
+	white: #fff
+);
+
+$sep: "-";
+
+$sep-el: "__";
+
+$sep-mod: "--";

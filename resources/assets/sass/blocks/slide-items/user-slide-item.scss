@@ -1,0 +1,175 @@
+.user-slide-item {
+	display: flex;
+	width: 100%;
+	height: 225px;
+	text-decoration: none;
+	position: relative;
+
+	&:hover {
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		box-shadow: inset 0px 0px 58px 0px rgba(0,0,0,0.75);
+		transition: opacity 0.3s linear;
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__left-col {
+		display: none;
+		position: relative;
+		width: calc(100% - 180px);
+		min-height: 100%;
+		z-index: 3;
+
+		@include media(sm) {
+			display: block;
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		width: 60px;
+		height: 25px;
+		padding: 0 5px;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		background: map-get($colors, white);
+
+		svg {
+			width: 12px;
+			height: 14px;
+			margin-right: 12px;
+			fill: map-get($colors, orange);
+		}
+
+		span {
+			font-size: 14px;
+			font-weight: 300;
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__rep,
+	&__trophy {
+		position: absolute;
+		bottom: 0;
+		width: 65px;
+		height: 50px;
+		background-color: rgba(51, 51, 51, 0.8);
+		font-size: 16px;
+		font-weight: 300;
+		color: map-get($colors, white);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__rep {
+		padding: 25px 10px 10px 5px;
+		left: 0;
+		border-radius: 0 100% 0 0;
+	}
+
+	&__trophy {
+		display: inline-flex;
+		padding: 25px 10px 10px 15px;
+		right: 0;
+		border-radius: 100% 0 0 0;
+
+		svg {
+			width: 16px;
+			height: 15px;
+			fill: map-get($colors, white);
+			margin-right: 5px;
+		}
+	}
+
+	&__right-col {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(40, 40, 40, 0.5);
+		padding: 25px 0 12px;
+		color: map-get($colors, white);
+		font-size: 12px;
+		font-weight: 300;
+		z-index: 3;
+
+		@include media(sm) {
+			width: 180px;
+		}
+	}
+
+	&__name {
+		padding: 0 14px;
+		font-size: 14px;
+		font-weight: normal;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin-bottom: 15px;
+	}
+
+	&__geo {
+		text-align: right;
+		color: map-get($colors, lGrey);
+		padding: 0 15px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-bottom: 5px;
+		border-bottom: 1px solid map-get($colors, lGrey);
+
+		svg {
+			width: 8px;
+			height: 12px;
+			fill: map-get($colors, lGrey);
+		}
+	}
+
+	&__stat {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 9px 15px;
+		border-bottom: 1px solid map-get($colors, lGrey);
+	}
+
+	&__moto {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 14px;
+		padding: 10px 5px 5px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

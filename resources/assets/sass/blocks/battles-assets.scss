@@ -1,0 +1,153 @@
+.battles-assets {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: relative;
+
+	&__title {
+		text-align: center;
+		margin: 0 auto;
+		font-size: 16px;
+		color: map-get($colors, dark);
+		letter-spacing: 0.05em;
+		font-weight: 300;
+	}
+
+	&__accept-title-row {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 50px;
+	}
+
+	&__accept-subtitle {
+		margin-left: auto;
+		margin-top: auto;
+		padding: 4px 38px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		font-size: 14px;
+		color: map-get($colors, dark);
+		flex-shrink: 0;
+		border: 1px solid map-get($colors, grey);
+		position: relative;
+		user-select: none;
+
+		&:after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 2px;
+			top: 100%;
+			left: 0;
+			background-color: map-get($colors, white);
+		}
+	}
+
+	&__accept-title {
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		color: map-get($colors, dark);
+	}
+
+	&__accept-content {
+		border: 1px solid map-get($colors, grey);
+		padding: 15px 22px 22px;
+	}
+
+	&__title-row {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 10px 0;
+		border-top: 1px solid map-get($colors, lGrey);
+	}
+
+	&__more-button {
+		display: flex;
+		justify-content: center;
+		padding-top: 18px;
+	}
+
+	&__settings {
+		padding: 6px 12px;
+		border: 1px solid map-get($colors, lGrey);
+	}
+
+	&__form-row {
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+	}
+
+	&__group {
+		display: flex;
+		align-items: center;
+		margin-right: auto;
+	}
+
+	&__form-row-inner-row {
+		display: flex;
+		margin-right: 8px;
+		align-items: center;
+	}
+
+	&__accept-form {
+
+		.form-caption {
+			margin-bottom: 8px;
+		}
+
+		.form-group {
+			margin-bottom: 30px;
+		}
+
+		.form-input {
+			border-color: #eeeeee;
+		}
+	}
+
+	&__accept-form-top {
+		display: flex;
+		align-items: center;
+	}
+
+	&__accept-form-top-buttons {
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__form {
+		justify-content: space-between;
+		display: flex;
+		align-items: center;
+	}
+
+	&__accept {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		min-height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s 0s ease, visibility 0s 0.2s ease;
+		background-color: map-get($colors, white);
+		z-index: 31;
+
+		&.is-active {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 0.2s 0.01s ease, visibility 0s 0s ease;
+		}
+	}
+}

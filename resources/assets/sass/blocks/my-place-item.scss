@@ -1,0 +1,320 @@
+.my-place-item {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #eee;
+	background-color: #fff;
+	align-items: center;
+	width: 100%;
+
+	@include media(psh) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	&__left-col {
+		display: flex;
+		flex-direction: column;
+		width: 280px;
+		height: 100%;
+
+		@include media(psh) {
+			margin: 0;
+			border-right: 1px solid #eee;
+		}
+	}
+
+	&__right-col {
+		display: flex;
+		flex-direction: column;
+		padding: 30px 10px 10px 10px;
+		width: 100%;
+		align-items: center;
+
+		@include media(psh) {
+			width: calc(100% - 280px);
+			align-items: flex-start;
+		}
+	}
+
+	&__place-image {
+		width: 280px;
+		height: 146px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		border-bottom: 1px solid #eee;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__top {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		flex-wrap: nowrap;
+		position: absolute;
+		width: 120px;
+		height: 30px;
+		top: 15px;
+		left: 0;
+		background-color: #ffffff;
+		padding-top: 5px;
+
+		svg {
+			width: 15px;
+			height: 15px;
+			fill: map-get($colors, orange);
+			margin-right: 5px;
+		}
+	}
+
+	&__top-current {
+		font-size: 16px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		margin-right: 5px;
+	}
+
+	&__top-all {
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__place-geo {
+		display: flex;
+		align-items: center;
+		padding: 5px 10px;
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		text-decoration: none;
+		line-height: 110%;
+
+		span {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		svg {
+			width: 8px;
+			height: 12px;
+			fill: map-get($colors, grey2);
+			margin-right: 7px;
+			flex-shrink: 0;
+		}
+
+		&:hover {
+			color: map-get($colors, grey2);
+		}
+	}
+
+	&__title {
+		display: inline-flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		text-decoration: none;
+		cursor: pointer;
+		margin-bottom: 15px;
+		line-height: 110%;
+
+		@include media(psh) {
+			width: 100%;
+		}
+
+		span {
+			overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+		}
+
+		&:hover {
+			text-decoration: underline;
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__center-row {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 25px;
+
+		@include media(psh) {
+			width: 100%;
+		}
+
+		@include media(md) {
+			flex-direction: row;
+		}
+	}
+
+	&__place-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 20px;
+
+		@include media(md) {
+			width: 50%;
+			margin-bottom: 0;
+			border-right: 1px solid #eee;
+			padding-right: 20px;
+			margin-right: 20px;
+		}
+	}
+
+	&__place-info-part {
+		display: inline-flex;
+		align-items: center;
+		font-size: 14px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		line-height: 110%;
+		margin-bottom: 15px;
+
+		span:nth-child(1) {
+			margin-right: 5px;
+			white-space: nowrap;
+		}
+
+		span:nth-child(2) {
+			color: map-get($colors, dark);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&:nth-last-child(1) {
+			margin-bottom: 0;
+		}
+
+		a {
+			text-decoration: none;
+			cursor: pointer;
+			color: map-get($colors, dark);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding-right: 15px;
+
+		@include media(md) {
+			width: 50%;
+		}
+	}
+
+	&__user-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		overflow: hidden;
+		flex-shrink: 0;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__user-info {
+		display: flex;
+		flex-direction: column;
+		padding: 12px 0 15px 20px;
+		width: calc(100% - 60px);
+	}
+
+	&__user-name {
+		font-size: 14px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		text-decoration: none;
+		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-bottom: 10px;
+		line-height: 110%;
+
+		&:hover {
+			text-decoration: underline;
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__user-reg {
+		font-size: 12px;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		line-height: 110%;
+	}
+
+	&__bottom-row {
+		display: flex;
+		align-items: center;
+		border-top: 1px solid #eee;
+		position: relative;
+		padding-top: 10px;
+		width: 100%;
+	}
+
+	&__arrow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 44px;
+		height: 44px;
+		border: 1px solid #eee;
+		border-radius: 50%;
+		position: absolute;
+		right: 0;
+		top: -22px;
+		background-color: white;
+		cursor: pointer;
+		text-decoration: none;
+		transition: all 0.3s linear;
+
+		svg {
+			width: 20px;
+			height: 10px;
+			fill: map-get($colors, grey);
+			transition: all 0.3s linear;
+			z-index: 3;
+		}
+	}
+
+	&__counters {
+		display: flex;
+		align-items: center;
+		line-height: 110%;
+	}
+}

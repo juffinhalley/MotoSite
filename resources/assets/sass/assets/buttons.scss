@@ -1,0 +1,1032 @@
+.button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+	z-index: 15;
+	user-select: none;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	outline: none;
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		transition: background-color 0.2s ease;
+		letter-spacing: 0.05em;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: #757575;
+		}
+	}
+
+	&--default {
+		.button {
+			&__content {
+				border: 1px solid #ebebeb;
+				font-size: 14px;
+				color: map-get($colors, black);
+				font-weight: 300;
+				padding: 4px 8px;
+			}
+		}
+	}
+
+	&--second {
+		background-color: #bdbdbd;
+
+		.button {
+			&__content {
+				border: none;
+				font-size: 16px;
+				color: map-get($colors, white);
+				font-weight: 300;
+				letter-spacing: 0.05em;
+				padding: 6px 12px;
+			}
+		}
+
+		&.button:hover {
+			background-color: #757575;
+
+			.button {
+				&__content {
+					svg {
+						fill: map-get($colors, red);
+					}
+				}
+			}
+		}
+	}
+
+	&--type-3 {
+		background-color: transparent;
+
+		.button {
+			&__content {
+				border: 1px solid #eee;
+				font-size: 14px;
+				color: map-get($colors, grey2);
+				font-weight: 300;
+				letter-spacing: 0.05em;
+				padding: 6px 12px;
+			}
+		}
+
+		&.button:hover {
+			background-color: #f8f8f8;
+
+			.button {
+				&__content {
+					color: map-get($colors, black);
+				}
+			}
+		}
+	}
+
+	&--type-orange {
+		&:hover {
+			.button {
+				&__content {
+					background-color: map-get($colors, orange);
+					border-color: map-get($colors, orange);
+				}
+			}
+		}
+
+		.button {
+			&__content {
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, dark);
+				border: 1px solid map-get($colors, grey);
+				transition: all 0.3s ease;
+			}
+		}
+	}
+
+	&--close {
+		&.button:hover {
+			box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.15);
+			background-color: transparent;
+
+			.button {
+				&__content {
+					svg {
+						fill: map-get($colors, red);
+					}
+				}
+			}
+		}
+	}
+
+	&--round {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 38px;
+		height: 38px;
+		border: 1px solid map-get($colors, grey);
+		border-radius: 50%;
+		flex-shrink: 0;
+		transition: all 0.3s ease;
+
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: map-get($colors, grey);
+		}
+
+		&.button:hover {
+			background-color: map-get($colors, white);
+			border: 1px solid map-get($colors, white);
+			box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
+
+			svg {
+				fill: map-get($colors, red);
+			}
+		}
+	}
+
+	&--round-t2 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 76px;
+		height: 76px;
+		border: 3px solid map-get($colors, white);
+		border-radius: 50%;
+		flex-shrink: 0;
+		transition: all 0.3s ease;
+
+		svg {
+			width: 28px;
+			height: 19px;
+			fill: map-get($colors, white);
+		}
+
+		&.button:hover {
+			background-color: transparent;
+			border-color: map-get($colors, red);
+			box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
+
+			svg {
+				fill: map-get($colors, red);
+			}
+		}
+	}
+
+	&--confirm {
+		.button {
+			&__content {
+				justify-content: flex-start;
+				border: 1px solid map-get($colors, grey);
+				padding: 8px 15px;
+			}
+
+			&__icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 18px;
+				height: 18px;
+				border: 1px solid map-get($colors, grey);
+				border-radius: 4px;
+				margin-right: 25px;
+				transition: all 0.3s ease;
+
+				svg {
+					fill: map-get($colors, white);
+					opacity: 0;
+					transition: opacity 0.3s ease;
+				}
+			}
+
+			&__text {
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, grey2);
+				transition: color 0.3s ease;
+			}
+		}
+
+		&.button:hover {
+			.button {
+				&__content {
+					background-color: map-get($colors, llGrey);
+				}
+
+				&__icon {
+					border: 1px solid map-get($colors, grey2);
+					background-color: map-get($colors, grey2);
+
+					svg {
+						opacity: 1;
+					}
+				}
+
+				&__text {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+
+		&.is-active {
+			user-select: none;
+			pointer-events: none;
+
+			.button {
+				&__icon {
+					border: 1px solid map-get($colors, grey);
+					background-color: map-get($colors, grey);
+					margin-right: 10px;
+
+					svg {
+						opacity: 1;
+					}
+				}
+
+				&__text {
+					font-size: 12px;
+					font-weight: 300;
+					color: map-get($colors, grey2);
+				}
+			}
+		}
+	}
+
+	&--lgrey {
+		background-color: map-get($colors, lGrey);
+
+		.button {
+			&__content {
+				color: map-get($colors, dark);
+				font-size: 14px;
+				font-weight: 300;
+				padding: 4px 8px;
+				border: 1px solid map-get($colors, lGrey);
+			}
+		}
+	}
+
+	&--dark {
+		.button {
+			&__content {
+				color: map-get($colors, grey);
+				font-size: 12px;
+				font-weight: normal;
+				padding: 4px 8px;
+			}
+		}
+
+		&.button:hover {
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--llGrey {
+		background-color: map-get($colors, llGrey);
+		border: 1px solid transparent;
+
+		.button {
+			&__content {
+				color: map-get($colors, grey2);
+				font-size: 14px;
+				font-weight: 300;
+				padding: 4px 8px;
+			}
+		}
+
+		&.button:hover {
+			background-color: map-get($colors, white);
+			border: 1px solid rgb(238, 238, 238);
+			box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.1);
+
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--grey2right {
+		.button {
+			&__content {
+				color: map-get($colors, grey2);
+				font-size: 12px;
+				font-weight: 300;
+				padding: 4px 8px;
+				@include media(psh) {
+					display: flex;
+					justify-content: flex-end;
+					padding-right: 20px;
+				}
+			}
+		}
+
+		&.button:hover {
+			background-color: map-get($colors, llGrey);
+
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--grey2def {
+		.button {
+			&__content {
+				color: map-get($colors, grey2);
+				font-size: 12px;
+				font-weight: 300;
+				padding: 4px 8px;
+				@include media(def) {
+					display: flex;
+					justify-content: flex-end;
+				}
+			}
+		}
+
+		&.button:hover {
+			background-color: map-get($colors, llGrey);
+
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--whiteborder {
+		background-color: map-get($colors, white);
+
+		.button {
+			&__content {
+				border: 1px solid #ebebeb;
+				font-size: 14px;
+				color: map-get($colors, black);
+				font-weight: 300;
+				padding: 4px 10px;
+			}
+		}
+	}
+
+	&--text-lg {
+		.button {
+			&__text {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&--omgwhite {
+		background-color: #fff;
+	}
+
+	&--white {
+		background-color: map-get($colors, white);
+
+		.button {
+			&__content {
+				border: none;
+				font-size: 14px;
+				color: map-get($colors, black);
+				font-weight: 300;
+				padding: 4px 10px;
+			}
+		}
+	}
+
+	&--facepalmwhite {
+		background-color: map-get($colors, white);
+
+		.button {
+			&__content {
+				display: flex;
+				justify-content: space-around;
+				border: none;
+				font-size: 14px;
+				color: map-get($colors, grey2);
+				font-weight: 300;
+				padding: 4px 10px;
+				border: 1px solid map-get($colors, white);
+
+				svg {
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+
+		&.button:hover {
+			background-color: map-get($colors, white);
+
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+					border: 1px solid map-get($colors, grey);
+
+					svg {
+						fill: map-get($colors, grey2);
+					}
+				}
+			}
+		}
+	}
+
+	&--lred {
+		.button {
+			&__content {
+				border: 1px solid #ebebeb;
+				background-color: map-get($colors, lRed);
+				font-size: 14px;
+				color: map-get($colors, grey2);
+				font-weight: 300;
+				padding: 4px 10px;
+			}
+		}
+	}
+
+	&--red {
+		background-color: map-get($colors, white);
+
+		.button {
+			&__content {
+				border: 1px solid map-get($colors, grey);
+				font-size: 14px;
+				color: map-get($colors, grey2);
+				font-weight: 300;
+				padding: 4px 10px;
+			}
+		}
+
+		&.button:hover {
+			.button {
+				&__content {
+					border: 1px solid map-get($colors, red2);
+					color: map-get($colors, red2);
+				}
+			}
+		}
+	}
+
+	&--showmore {
+		.button {
+			&__content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 10px 0 20px;
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, grey2);
+				border: 1px solid #ebebeb;
+
+				svg {
+					width: 5px;
+					height: 11px;
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+
+	&--showmore-t2 {
+		background-color: map-get($colors, llGrey);
+
+		.button {
+			&__content {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 15px;
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, grey2);
+				border: 1px solid #eee;
+			}
+
+			&__icon {
+				position: absolute;
+				right: 15px;
+
+				svg {
+					width: 5px;
+					height: 11px;
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+
+	&--ui {
+		border: 1px solid transparent;
+		height: 40px;
+		width: 100%;
+		border-radius: 4px;
+
+		&.is-active {
+			background: url("/images/nomcfire.gif") no-repeat bottom;
+			background-size: cover;
+
+			.button {
+				&__content {
+					color: transparent;
+				}
+			}
+		}
+
+		.button {
+			&__content {
+				color: map-get($colors, white);
+				font-size: 20px;
+				font-weight: bold;
+				padding: 4px 8px;
+				filter: drop-shadow(0 0 1px black);
+			}
+		}
+
+		&.button:hover {
+			box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.1);
+			background: url("/images/nomc.jpg") no-repeat bottom;
+			background-size: cover;
+			opacity: 0.5;
+
+			.button {
+				&__content {
+					background: linear-gradient(135deg, rgba(255,38,0,1) 0%, rgba(255,255,255,1) 50%, rgba(34,255,0,1) 100%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+			}
+		}
+	}
+
+	&--empty {
+		.button {
+			&__content {
+				border: none;
+				font-size: 14px;
+				color: map-get($colors, grey2);
+				font-weight: 300;
+				letter-spacing: 0.05em;
+			}
+		}
+
+		&.button:hover {
+			background-color: transparent;
+
+			.button {
+				&__content {
+					text-decoration: underline;
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--defgr {
+		background-color: map-get($colors, white);
+
+		.button {
+			&__content {
+				border: 1px solid map-get($colors, lGrey5);
+				font-size: 14px;
+				color: map-get($colors, grey);
+				font-weight: 300;
+				padding: 4px 8px;
+			}
+		}
+
+		&:hover {
+			.button {
+				&__content {
+					color: map-get($colors, dark);
+				}
+			}
+		}
+	}
+
+	&--vam {
+		vertical-align: middle;
+	}
+
+	&--xs {
+		height: 26px;
+
+		.button {
+			&__content {
+				width: 100px;
+				height: 26px;
+			}
+		}
+	}
+
+	&--sm {
+		height: 26px;
+
+		.button {
+			&__content {
+				width: 120px;
+				height: 26px;
+			}
+		}
+	}
+
+	&--smx {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 120px;
+				height: 35px;
+			}
+		}
+	}
+
+	&--md {
+		height: 30px;
+
+		.button {
+			&__content {
+				width: 145px;
+				height: 30px;
+			}
+		}
+
+		&.button {
+			&--icon-left {
+				.button {
+					&__content {
+						svg {
+							width: 12px;
+							height: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--smd {
+		height: 30px;
+	}
+
+	&--xmd {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 180px;
+				height: 35px;
+			}
+
+			&__icon {
+				svg {
+					width: 14px;
+					height: 12px;
+				}
+			}
+		}
+	}
+
+	&--mdn {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 160px;
+				height: 35px;
+				display: flex;
+
+				svg {
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			&__text {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&--mds {
+		height: 30px;
+
+		.button {
+			&__content {
+				width: 160px;
+				height: 30px;
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 6px;
+					height: 14px;
+				}
+			}
+		}
+
+		&.button {
+			&--icon-left {
+				.button {
+					&__content {
+						svg {
+							width: 12px;
+							height: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--mdsr {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 180px;
+				height: 35px;
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 20px;
+					height: 10px;
+					fill: map-get($colors, lGrey);
+				}
+			}
+		}
+	}
+
+	&--mdk {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 200px;
+				height: 35px;
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 20px;
+					height: 10px;
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+
+	&--mdst {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 200px;
+				height: 35px;
+			}
+		}
+	}
+
+	&--def {
+		height: 35px;
+
+		.button {
+			&__content {
+				width: 290px;
+				height: 35px;
+			}
+		}
+	}
+
+	&--18036 {
+		height: 36px;
+
+		.button {
+			&__content {
+				width: 180px;
+				height: 36px;
+			}
+
+			&__icon {
+				margin-left: auto;
+
+				svg {
+					width: 6px;
+					height: 14px;
+				}
+			}
+		}
+
+		&.button {
+			&--icon-left {
+				.button {
+					&__content {
+						svg {
+							width: 12px;
+							height: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--lgs {
+		height: 40px;
+
+		.button {
+			&__content {
+				width: 180px;
+				height: 40px;
+			}
+		}
+	}
+
+	&--lgomg {
+		height: 40px;
+
+		.button {
+			&__content {
+				width: 128px;
+				height: 40px;
+			}
+		}
+	}
+
+	&--lg {
+		height: 40px;
+
+		.button {
+			&__content {
+				width: 300px;
+				height: 40px;
+			}
+		}
+	}
+
+	&--lgm {
+		height: 40px;
+
+		.button {
+			&__content {
+				width: 200px;
+				height: 40px;
+			}
+		}
+	}
+
+	&--lgmd {
+		height: 40px;
+		width: 100%;
+	}
+
+	&--mdlg {
+		height: 30px;
+
+		.button {
+			&__content {
+				width: 300px;
+				height: 30px;
+			}
+		}
+	}
+
+	&--lmd {
+		height: 30px;
+
+		.button {
+			&__content {
+				width: 200px;
+				height: 30px;
+			}
+		}
+	}
+
+	&--mg {
+		height: 40px;
+
+		.button {
+			&__content {
+				max-width: 100%;
+				width: 240px;
+				height: 40px;
+			}
+		}
+	}
+
+	&--mgsq {
+		height: 50px;
+
+		.button {
+			&__content {
+				width: 50px;
+				height: 50px;
+
+				svg {
+					width: 18px;
+					height: 18px;
+				}
+			}
+		}
+	}
+
+	&--w100 {
+		width: 100%;
+
+		.button {
+			&__content {
+				width: 100%;
+			}
+		}
+	}
+
+	&--sb-content {
+		.button {
+			&__content {
+				justify-content: space-between;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+
+	&:hover {
+		transition: background-color 0.3s ease;
+		background-color: map-get($colors, lGrey2);
+	}
+
+	&--icon-left {
+		.button {
+			&__content {
+				padding-left: 46px;
+				text-align: left;
+				justify-content: flex-start;
+
+				svg {
+					left: 12px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+
+	&--omgmr1 {
+		margin: 0;
+		@include media(psh) {
+			margin-right: 1px;
+		}
+	}
+
+	.paper-button {
+		backface-visibility: hidden;
+	}
+
+	.button-wrapper {
+		display: flex;
+
+		&--right {
+			justify-content: flex-end;
+		}
+	}
+
+	.show-more-button-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid #eeeeee;
+		padding: 20px 0;
+		margin-bottom: 30px;
+
+		&--mpnone {
+			padding: 0;
+			margin: 0;
+			border: none;
+		}
+	}
+}

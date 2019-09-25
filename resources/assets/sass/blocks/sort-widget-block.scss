@@ -1,0 +1,38 @@
+.sort-widget-block {
+	display: flex;
+	background-color: #fff;
+	padding: 4px 14px 4px 14px;
+	border: 1px solid #eeeeee;
+	display: flex;
+	align-items: center;
+	min-height: 40px;
+	flex-direction: column;
+
+	@include media(psh) {
+		flex-direction: row;
+		padding: 4px 14px 4px 24px;
+	}
+
+	&__text {
+		margin-bottom: 10px;
+
+		@include media(psh) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__group {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media(psh) {
+			margin-right: 0;
+		}
+	}
+
+	&--grey-bg {
+		background-color: #f8f8f8;
+	}
+}

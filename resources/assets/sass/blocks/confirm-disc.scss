@@ -1,0 +1,19 @@
+.confirm-disc {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	&__confirm {
+		width: 180px;
+		height: 35px;
+		margin-right: 20px;
+	}
+
+	&__disc {
+		svg {
+			width: 16px;
+			height: 14px;
+			fill: map-get($colors, grey);
+		}
+	}
+}

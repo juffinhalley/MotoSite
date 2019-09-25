@@ -1,0 +1,308 @@
+.main-battles {
+	margin-bottom: 20px;
+	&--draw {
+		.main-battles {
+			&__item-winner-content {
+				svg {
+					fill: map-get($colors, grey);
+				}
+			}
+		}
+	}
+	&__item-winner-content {
+		position: absolute;
+		top: calc(70px + 20px);
+		left: 0;
+		width: 134px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: map-get($colors, white);
+		@include media(psh) {
+			top: 20px;
+			left: 0;
+		}
+
+		svg {
+			width: 15px;
+			height: 14px;
+			margin-right: 10px;
+			fill: map-get($colors, red);
+		}
+
+		span {
+			font-size: 14px;
+			font-weight: 300;
+		}
+
+		&.win2 {
+			right: 0;
+			top: auto;
+			left: auto;
+			bottom: calc(70px + 220px);
+			@include media(psh) {}
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 16px;
+		text-decoration: none;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		position: relative;
+		border-bottom: 2px solid map-get($colors, grey2);
+		@include media(psh) {
+			flex-direction: row;
+			margin-bottom: 46px;
+			justify-content: space-between;
+			border-bottom: 0;
+		}
+	}
+
+	&__battle-decor {
+		position: absolute;
+		top: calc(50% - 7px);
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50px;
+		height: 50px;
+		background-color: map-get($colors, white);
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 15;
+		@include media(psh) {
+			top: 135px;
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: map-get($colors, grey);
+		}
+
+		&.is-active {
+			svg {
+				animation: blinkBattle 2s ease infinite;
+			}
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 270px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__battle-date {
+		position: relative;
+		left: 50%;
+		top: 0;
+		width: 240px;
+		z-index: 15;
+		background-color: map-get($colors, white);
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		color: map-get($colors, grey2);
+		height: 30px;
+		display: inline-flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		transform: translateX(-50%);
+		user-select: none;
+		margin-bottom: 5px;
+		@include media(psh) {
+			position: absolute;
+			margin-bottom: 0;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: -23px;
+				transform: rotate(-45deg);
+				right: calc(100% - 22px);
+				border: 22px solid transparent;
+				border-left: 22px solid #fff;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -23px;
+				transform: rotate(45deg);
+				left: calc(100% - 22px);
+				border: 22px solid transparent;
+				border-right: 22px solid #fff;
+			}
+		}
+
+		span {
+			padding-left: 5px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		@include media(psh) {
+			display: block;
+			width: calc(50% - 2px);
+		}
+
+		&:nth-last-child(1) {
+			.expand-image {
+				left: auto;
+				right: 5px;
+			}
+
+			.disclaimer-image {
+				left: auto;
+				right: 5px;
+			}
+		}
+
+		&.is-winner {
+			box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.15);
+		}
+	}
+
+	&__main {
+		.main-battles__item {
+			&:nth-child(3) {
+				flex-direction: column-reverse;
+
+				@include media (psh) {
+					flex-direction: column;
+				}
+			}
+		}
+	}
+
+	&__item-descr {
+		height: 70px;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		background-color: map-get($colors, white);
+		@include media(psh) {
+			flex-direction: row;
+			justify-content: flex-start;
+			padding: 4px 0 4px 18px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__item-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media(psh) {
+			justify-content: flex-start;
+		}
+	}
+
+	&__item-name {
+		font-size: 16px;
+		color: map-get($colors, dark);
+		letter-spacing: 0.05em;
+		margin-bottom: 10px;
+		max-width: 270px;
+		font-weight: 300;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+		@include media(psh) {
+			margin-right: auto;
+			padding-right: 10px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__item-stat {
+		color: map-get($colors, red);
+		font-size: 16px;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+		width: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__item-assets {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		border: 1px solid map-get($colors, lGrey);
+		height: 50px;
+	}
+
+	&__item-like {
+		width: 78px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		justify-content: center;
+		color: map-get($colors, grey2);
+		transition: color 0.2s ease, box-shadow 0.2s ease;
+		user-select: none;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: map-get($colors, grey);
+		}
+
+		&:hover {
+			color: map-get($colors, dark);
+			box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.15);
+
+			svg {
+				fill: map-get($colors, red);
+			}
+		}
+	}
+
+	&__item-battle {
+		width: 50px;
+		border-left: 1px solid map-get($colors, lGrey);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: map-get($colors, grey2);
+		font-size: 16px;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+
+		svg {
+			width: 15px;
+			height: 15px;
+			margin-right: 8px;
+			fill: map-get($colors, grey);
+		}
+	}
+}

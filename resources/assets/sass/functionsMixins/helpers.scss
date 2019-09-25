@@ -1,0 +1,252 @@
+
+
+////
+/// @group _settings/
+////
+
+/// @param {String} $mod [""] - название брейкпоинта с разделителем
+/// @access private
+@mixin _helpers-flex-generate($mod: "") {
+	// sass-lint:disable no-important
+	._#{$mod}flex {
+		display: flex !important;
+	}
+
+	._#{$mod}items-start {
+		align-items: flex-start !important;
+	}
+
+	._#{$mod}items-end {
+		align-items: flex-end !important;
+	}
+
+	._#{$mod}items-center {
+		align-items: center !important;
+	}
+
+	._#{$mod}items-stretch {
+		align-items: stretch !important;
+	}
+
+	._#{$mod}justify-start {
+		justify-content: flex-start !important;
+	}
+
+	._#{$mod}justify-end {
+		justify-content: flex-end !important;
+	}
+
+	._#{$mod}justify-center {
+		justify-content: center !important;
+	}
+
+	._#{$mod}justify-between {
+		justify-content: space-between !important;
+	}
+
+	._#{$mod}justify-around {
+		justify-content: space-around !important;
+	}
+
+	._#{$mod}self-start {
+		align-self: flex-start !important;
+	}
+
+	._#{$mod}self-end {
+		align-self: flex-end !important;
+	}
+
+	._#{$mod}self-center {
+		align-self: center !important;
+	}
+
+	._#{$mod}self-stretch {
+		align-self: stretch !important;
+	}
+
+	._#{$mod}flex-wrap {
+		flex-wrap: wrap !important;
+	}
+
+	._#{$mod}flex-nowrap {
+		flex-wrap: nowrap !important;
+	}
+
+	._#{$mod}flex-column {
+		flex-direction: column !important;
+	}
+
+	._#{$mod}flex-column-reverse {
+		flex-direction: column-reverse !important;
+	}
+
+	._#{$mod}flex-row {
+		flex-direction: row !important;
+	}
+
+	._#{$mod}flex-row-reverse {
+		flex-direction: row-reverse !important;
+	}
+
+	._#{$mod}flex-grow {
+		flex-grow: 1 !important;
+	}
+
+	._#{$mod}flex-nogrow {
+		flex-grow: 0 !important;
+	}
+
+	._#{$mod}flex-shrink {
+		flex-shrink: 1 !important;
+	}
+
+	._#{$mod}flex-noshrink {
+		flex-shrink: 0 !important;
+	}
+
+	@for $i from 0 through 5 {
+		._#{$mod}flex-order-#{$i} {
+			order: $i !important;
+		}
+	}
+	// sass-lint:enable no-important
+}
+////
+/// @group _settings/
+////
+
+/// Хедперы видимости элементов
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-show-hide ($points: ()) {
+	// sass-lint:disable no-important
+	._hide {
+		display: none !important;
+	}
+
+	.touchevents {
+		._hide-touch {
+			display: none !important;
+		}
+	}
+
+	.no-touchevents {
+		._hide-notouch {
+			display: none !important;
+		}
+	}
+
+	._unhidden {
+		display: initial;
+	}
+
+	@media print {
+		._noprint {
+			display: none !important;
+		}
+	}
+
+	@each $point, $size in $points {
+		$mod: $point + $sep;
+
+		@include media($size) {
+			._#{$mod}hide {
+				display: none !important;
+			}
+		}
+
+		@include media($size, max) {
+			._#{$mod}show {
+				display: none !important;
+			}
+		}
+	}
+	// sass-lint:enable no-important
+}
+
+
+/// Flex хелперы
+/// @requires {mixin} media
+/// @param {Map} $points [()] - карта брейкпоинтов, для которых нужно сделать хелперы
+@mixin helpers-flex($points: ()) {
+
+	// создаем базовый набор
+	@include _helpers-flex-generate();
+
+	// создаем набор для медиа запросов
+	@each $point, $size in $points {
+		@include media($size) {
+			@include _helpers-flex-generate($point + $sep);
+		}
+	}
+}
+
+
+@mixin _helpers-gutter-sides($name, $prop, $suffix, $value, $mod: "") {
+	$start: #{$mod + $name};
+	$end: #{$sep + $suffix};
+
+	$sides: (
+		t: top,
+		r: right,
+		b: bottom,
+		l: left
+	);
+
+	$axis: (
+		tb: (top, bottom),
+		lr: (left, right),
+	);
+
+	// sass-lint:disable no-important
+	._#{$start + $end} {
+		#{$prop}: $value !important;
+	}
+	@each $side, $val in $sides {
+		._#{$start + $side + $end} {
+			#{$prop}#{-#{$val}}: $value !important;
+		}
+	}
+	@each $side, $val in $axis {
+		._#{$start + $side + $end} {
+			#{$prop}#{-#{nth($val, 1)}}: $value !important;
+			#{$prop}#{-#{nth($val, 2)}}: $value !important;
+		}
+	}
+	// sass-lint:enable no-important
+}
+
+@mixin helpers-gutter ($points: (), $gutters: ()) {
+	$props: (
+		m: margin,
+		p: padding
+	);
+
+	@each $name, $prop in $props {
+		@include _helpers-gutter-sides($name, $prop, none, 0);
+		@each $point, $size in $points {
+			@include media($size) {
+				@include _helpers-gutter-sides($name, $prop, none, 0, $point + $sep);
+			}
+		}
+
+		@if ($name == m) {
+			@include _helpers-gutter-sides($name, $prop, auto, auto);
+			@each $point, $size in $points {
+				@include media($size) {
+					@include _helpers-gutter-sides($name, $prop, auto, auto, $point + $sep);
+				}
+			}
+		}
+
+		@each $gap, $value in $gutters {
+			@include _helpers-gutter-sides($name, $prop, $gap, $value);
+
+			@each $point, $size in $points {
+				@include media($size) {
+					@include _helpers-gutter-sides($name, $prop, $gap, $value, $point + $sep);
+				}
+			}
+		}
+	}
+}

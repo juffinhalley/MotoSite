@@ -1,0 +1,16 @@
+.user-articles-block {
+	display: flex;
+	width: 100%;
+	padding: 18px 16px;
+	flex-direction: column;
+
+	&__grid {
+		display: flex;
+		min-width: 100%;
+		flex-wrap: wrap;
+		overflow: auto;
+		max-height: 600px;
+		padding-right: 6px;
+		margin: 0 -10px;
+	}
+}

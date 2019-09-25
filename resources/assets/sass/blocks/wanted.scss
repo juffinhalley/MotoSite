@@ -1,0 +1,186 @@
+.wanted-items {
+	width: 100%;
+}
+
+.wanted-item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 28px 0;
+	border-bottom: 1px solid #eeeeee;
+
+	&:nth-child(1) {
+		padding-top: 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include media(psh){
+			flex-direction: row;
+		}
+	}
+
+	&__image {
+			width: 315px;
+			height: 214px;
+
+    	@include media(psh){
+		    width: 275px;
+	    	height: 190px;
+    	}
+
+		@include media(defp){
+			width: 315px;
+			height: 214px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 12px;
+		width: 100px;
+		height: 30px;
+		background-color: #333333;
+		letter-spacing: 0.05em;
+		font-size: 16px;
+		font-weight: 300;
+		color: white;
+		z-index: 5;
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+	}
+
+	&__title-row {
+		display: flex;
+		margin-bottom: 15px;
+	}
+
+	&__name {
+		font-size: 16px;
+		color: #333;
+		letter-spacing: 0.05em;
+		font-weight: 300;
+	}
+
+	&__user-descr-row{
+		flex-wrap: wrap;
+
+		.button {
+			margin-bottom: 6px;
+
+			&:nth-child(1) {
+				margin-right: 6px;
+			}
+		}
+	}
+
+	&__info-item {
+		font-size: 12px;
+		color: #757575;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		line-height: 100%;
+		margin-bottom: 5px;
+
+		@include media(ms){
+			margin-bottom: 0;
+		}
+	}
+
+	&__info {
+		margin-bottom: 12px;
+	}
+
+	&__user-title {
+		text-align: center;
+		width: 315px;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		color: #333;
+	}
+
+	&__user-image {
+		margin-right: 14px;
+		height: 70px;
+		border-radius: 100%;
+		width: 70px;
+		overflow: hidden;
+		flex-shrink: 0;
+
+		@include media(psh){
+			margin-right: 24px;
+		}
+	}
+
+	&__user-descr {
+		padding-top: 14px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__user-row {
+		display: flex;
+	}
+
+	&__descr-title {
+		margin-bottom: 10px;
+		text-align: center;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		color: #333;
+		line-height: 100%;
+	}
+
+	&__descr-text {
+		font-size: 13px;
+		color: #757575;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		line-height: 120%;
+	}
+
+	&__city {
+		margin-left: auto;
+		font-size: 14px;
+		color: #757575;
+
+		svg {
+			width: 10px;
+			height: 15px;
+			fill: 757575;
+			margin-right: 4px;
+		}
+	}
+
+	&__image-wrapper {
+		position: relative;
+		margin-right: 18px;
+	    width: 100%;
+			height: 214px;
+    	max-width: 315px;
+    	margin: 0 auto 20px;
+
+    	@include media(psh){
+		    width: 275px;
+	    	height: 190px;
+	    	margin: 0 18px 0 0;
+    	}
+
+		@include media(defp){
+			width: 315px;
+			height: 214px;
+		}
+	}
+}

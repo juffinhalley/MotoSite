@@ -1,0 +1,96 @@
+.descr-slider-block {
+	display: flex;
+	width: 100%;
+	position: relative;
+	padding-top: 10px;
+	border-top: 1px solid #bdbdbd;
+	flex-direction: column;
+	margin-bottom: 40px;
+
+	@include media(psh) {
+		margin-bottom: 30px;
+	}
+
+	@include media(psh) {
+		flex-direction: row;
+	}
+
+	&__slider {
+		width: 100%;
+
+		@include media(psh) {
+			width: calc(100% - 250px);
+		}
+
+		@include media(lg) {
+			width: calc(100% - 285px);
+		}
+	}
+
+	&__descr {
+		width: 100%;
+		padding-right: 0;
+
+		@include media(psh) {
+			width: 250px;
+			padding-right: 16px;
+		}
+
+		@include media(lg) {
+			width: 285px;
+			padding-right: 30px;
+		}
+	}
+
+	&__text {
+
+	}
+
+	&__button {
+		display: none;
+		margin-left: auto;
+
+		@include media(psh) {
+			display: flex;
+		}
+	}
+
+	&__resp-button {
+		display: flex;
+		justify-content: center;	
+		margin-top: 0;
+
+		@include media(psh) {
+			display: none;
+		}
+	}
+
+	&__button-resp {
+		display: none;
+
+		@include media(psh) {
+			display: flex;
+		}
+	}
+
+	&__row {
+		display: flex;
+		width: 100%;
+		padding: 0 33px;
+		align-items: center;
+		margin-bottom: -14px;
+		height: auto;
+		flex-direction: column;
+
+		@include media(psh) {
+			height: 38px;
+			flex-direction: row;
+		}
+	}
+
+	&__slider-button {
+		display: flex;
+		justify-content: center;	
+		margin-top: -14px;
+	}
+}

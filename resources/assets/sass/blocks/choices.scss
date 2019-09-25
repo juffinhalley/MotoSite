@@ -1,0 +1,35 @@
+.choices {
+
+	&__inner {
+
+		transition: background-color 0.2s ease;
+	}
+
+	&:hover {
+		.choices__inner {
+			background-color: #efefef;
+		}
+	}
+}
+
+.choices{
+	&:after {
+		content: "";
+	    height: 0;
+	    width: 0;
+	    border-style: solid;
+	    border-color: #333333 transparent transparent transparent;
+	    border-width: 5px;
+	    position: absolute;
+	    right: 11.5px;
+	    top: 50%;
+	    margin-top: -2.5px;
+	    pointer-events: none;
+	}
+
+	&.is-open {
+		&:after{
+			 transform: scale(-1) translateY(5px);
+		}
+	}
+}

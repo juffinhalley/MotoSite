@@ -1,0 +1,566 @@
+.slider {
+	width: 100%;
+	position: relative;
+	border-left: 1px solid #bdbdbd;
+	border-right: 1px solid #bdbdbd;
+
+	.swiper-container {
+		cursor: ew-resize;
+	}
+
+	&--default {
+		padding: 20px 33px;
+	}
+
+	&--triple {
+		padding: 20px 30px 0;
+		@include media(xs) {
+			padding: 20px 44px 0;
+		}
+
+		.swiper-container {
+			width: 100%;
+			max-width: 220px;
+			@include media(sm) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&--item {
+		border: none;
+	}
+
+	&--battles {
+		border: none;
+
+		.slider-arrow {
+			background-color: map-get($colors, white);
+			top: calc(50% + 20px);
+			opacity: 0;
+			transition: opacity 0.2s ease, background-color 0.2s ease;
+
+			svg {
+				fill: map-get($colors, dark);
+			}
+
+			&:hover {
+				background-color: map-get($colors, white);
+
+				svg {
+					fill: map-get($colors, red);
+				}
+			}
+
+			&.swiper-button-disabled {
+				opacity: 0;
+				transition: opacity 0.2s ease, background-color 0.2s ease;
+
+				&:hover {
+					background-color: map-get($colors, lGrey);
+
+					svg {
+						fill: map-get($colors, red);
+					}
+				}
+			}
+		}
+
+		.disclaimer-image,
+		.expand-image {
+			opacity: 0;
+		}
+
+		&:hover {
+			.disclaimer-image,
+			.expand-image {
+				opacity: 1;
+			}
+
+			.slider-arrow {
+				opacity: 1;
+
+				&.swiper-button-disabled {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	&--mini-slider {
+		padding: 20px 30px 0;
+		@include media(xs) {
+			padding: 28px 33px;
+		}
+
+		.swiper-container {
+			width: 100%;
+			max-width: 210px;
+			@include media(sm) {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.slider-arrow {
+	position: absolute;
+	top: 50%;
+	width: 28px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	padding: 6px;
+	transform: translateY(-50%);
+	background-color: #333333;
+	z-index: 5;
+	cursor: pointer;
+	outline: none;
+	transition: background-color 0.2s ease;
+	user-select: none;
+
+	&:hover {
+		background-color: #d32f2f;
+	}
+
+	&:active {
+		transition: background-color 0s ease;
+		background-color: #591616;
+	}
+
+	&--left {
+		left: 0;
+		justify-content: flex-start;
+		border-radius: 0 90px 90px 0;
+	}
+
+	&--right {
+		justify-content: flex-end;
+		border-radius: 90px 0 0 90px;
+		right: 0;
+	}
+
+	svg {
+		width: 10px;
+		height: 16px;
+		fill: #fff;
+	}
+
+	&.swiper-button-disabled {
+		cursor: no-drop;
+		opacity: 0.7;
+
+		&:hover {
+			background-color: #333333;
+		}
+
+		&:active {
+			background-color: #333333;
+		}
+	}
+}
+
+.slider-row-block {
+	border-top: 1px solid #bdbdbd;
+	padding: 10px 44px 0;
+	display: flex;
+	margin-bottom: -8px;
+
+	&--t2 {
+		border: none;
+	}
+}
+//my
+
+.my-slider {
+	&--one-pag {
+		position: relative;
+		padding-bottom: 35px;
+
+		.my-slider {
+			&__button {
+				display: flex;
+				align-items: center;
+			}
+
+			&__button-next,
+			&__button-prev {
+				position: absolute;
+				top: calc(50% - 17.5px);
+				transform: translateY(-50%);
+				width: 20px;
+				height: 33px;
+				user-select: none;
+				z-index: 3;
+
+				svg {
+					width: 20px;
+					height: 33px;
+					fill: map-get($colors, white);
+				}
+
+				&:hover {
+					&.my-slider {
+						&__button-next,
+						&__button-prev {
+							svg {
+								fill: map-get($colors, red);
+							}
+						}
+						&__button-disabled {
+							svg {
+								fill: map-get($colors, white);
+							}
+						}
+					}
+				}
+			}
+
+			&__button-prev {
+				left: 15px;
+			}
+
+			&__button-next {
+				right: 15px;
+			}
+
+			&__button-disabled {
+				cursor: no-drop;
+				opacity: 0.7;
+			}
+		}
+
+		.swiper-pagination {
+			left: 50%;
+			transform: translateX(-50%);
+			padding-top: 20px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+			background: transparent;
+			border: 1px solid map-get($colors, grey);
+			transition: background 0.3s ease;
+			opacity: 1;
+			margin-right: 10px;
+			&:nth-last-child(1) {
+				margin-right: 0;
+			}
+		}
+
+		.swiper-pagination-bullet-active {
+			background: map-get($colors, grey);
+		}
+	}
+
+	&--defaultLim {
+		position: relative;
+		padding: 30px 40px 0;
+		border-left: 1px solid map-get($colors, grey);
+		border-right: 1px solid map-get($colors, grey);
+
+		.swiper-wrapper {
+			padding-bottom: 10px;
+		}
+
+		.my-slider {
+			&__top {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 15px;
+				margin-top: -45px;
+				@include media(psh) {
+					flex-direction: row;
+					justify-content: space-between;
+				}
+			}
+
+			&__title {
+				font-size: 16px;
+				font-weight: 300;
+				color: map-get($colors, dark);
+				margin-bottom: 10px;
+				@include media(psh) {
+					margin-bottom: 0;
+				}
+			}
+
+			&__option {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				@include media(psh) {
+					flex-direction: row;
+					justify-content: flex-end;
+				}
+			}
+
+			&__button {
+				display: flex;
+				align-items: center;
+			}
+
+			&__select {
+				margin-bottom: 10px;
+				@include media(psh) {
+					margin-right: 30px;
+					margin-bottom: 0;
+				}
+			}
+
+			&__button-next,
+			&__button-prev {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 28px;
+				height: 55px;
+				background-color: map-get($colors, dark);
+				user-select: none;
+				transition: background-color 0.2s ease;
+
+				&:hover {
+					background-color: map-get($colors, red);
+
+					&.my-slider {
+						&__button-disabled {
+							background-color: map-get($colors, dark);
+						}
+					}
+				}
+
+				svg {
+					width: 10px;
+					height: 16px;
+					fill: map-get($colors, white);
+				}
+			}
+
+			&__button-prev {
+				left: 0;
+				border-radius: 0 28px 28px 0;
+				padding-right: 5px;
+			}
+
+			&__button-next {
+				right: 0;
+				border-radius: 28px 0 0 28px;
+				padding-left: 5px;
+			}
+
+			&__button-disabled {
+				cursor: no-drop;
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&--user-filter {
+		border-left: none;
+		border-right: none;
+		padding: 10px 40px 0;
+	}
+
+	&__button-next {
+		outline: none;
+		cursor: pointer;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__button-prev {
+		outline: none;
+		cursor: pointer;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__button-disabled {}
+}
+// slider-site-top
+
+.slider-site-top {
+	display: none;
+
+	&--withlimiters {
+		.swiper-button-prev {
+			background: none;
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 48px;
+			height: 48px;
+			border: 1px solid transparent;
+			cursor: pointer;
+			user-select: none;
+			transition: all 0.3s linear;
+
+			svg {
+				width: 9px;
+				height: 19px;
+				fill: map-get($colors, red3);
+			}
+
+			&:hover {
+				box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+				background-color: rgb(255, 255, 255);
+				border: 1px solid rgb(238, 238, 238);
+			}
+		}
+
+		.swiper-button-next {
+			background: none;
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 48px;
+			height: 48px;
+			border: 1px solid transparent;
+			cursor: pointer;
+			user-select: none;
+			transition: all 0.3s linear;
+
+			svg {
+				width: 9px;
+				height: 19px;
+				fill: map-get($colors, red3);
+			}
+
+			&:hover {
+				box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+				background-color: rgb(255, 255, 255);
+				border: 1px solid rgb(238, 238, 238);
+			}
+		}
+	}
+
+	&.is-active {
+		display: block;
+	}
+
+	.swiper-container {
+		width: 100%;
+		height: 100%;
+	}
+
+	.swiper-wrapper {
+		padding-bottom: 10px;
+	}
+
+	.swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: transparent;
+		/* Center slide text vertically */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.swiper-button-prev {
+		background: none;
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 48px;
+		height: 48px;
+		border: 1px solid transparent;
+		cursor: pointer;
+		user-select: none;
+		transition: all 0.3s linear;
+
+		svg {
+			width: 9px;
+			height: 19px;
+			fill: map-get($colors, red3);
+		}
+
+		&:hover {
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+			background-color: rgb(255, 255, 255);
+			border: 1px solid rgb(238, 238, 238);
+		}
+
+		&.swiper-button-disabled {
+			cursor: no-drop;
+			pointer-events: auto;
+
+			svg {
+				fill: map-get($colors, grey);
+			}
+		}
+	}
+
+	.swiper-button-next {
+		background: none;
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 48px;
+		height: 48px;
+		border: 1px solid transparent;
+		cursor: pointer;
+		user-select: none;
+		transition: all 0.3s linear;
+
+		svg {
+			width: 9px;
+			height: 19px;
+			fill: map-get($colors, red3);
+		}
+
+		&:hover {
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+			background-color: rgb(255, 255, 255);
+			border: 1px solid rgb(238, 238, 238);
+		}
+
+		&.swiper-button-disabled {
+			cursor: no-drop;
+			pointer-events: auto;
+
+			svg {
+				fill: map-get($colors, grey);
+			}
+		}
+	}
+}

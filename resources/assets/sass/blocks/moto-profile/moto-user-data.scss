@@ -1,0 +1,224 @@
+.moto-user-data {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 825px;
+
+		&__top-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			background-color: map-get($colors, llGrey);
+
+			@include media(ms) {
+				flex-direction: row;
+			}
+		}
+
+		&__switch-button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 275px;
+			min-height: 38px;
+			font-size: 14px;
+			text-decoration: none;
+			color: map-get($colors, grey2);
+			border: 1px solid map-get($colors, lGrey);
+			position: relative;
+			flex-grow: 0;
+			margin-bottom: 5px;
+
+			@include media(ms) {
+				margin-bottom: 0;
+
+				&:last-child {
+					margin-right: auto;
+				}
+
+				&.is-active {
+					&::before, &::after {
+						content: '';
+						position: absolute;
+						margin: 0 auto;
+						bottom: -28px;
+						border: 14px solid transparent;
+						border-top: 14px solid map-get($colors, lGrey);
+					}
+
+					&::after {
+						border-top: 14px solid map-get($colors, white);
+						bottom: -27px;
+					}
+				}
+			}
+
+			&:hover {
+				background-color: map-get($colors, white);
+				color: map-get($colors, black);
+				cursor: pointer;
+			}
+
+			&.is-active {
+				background-color: map-get($colors, white);
+				color: map-get($colors, black);
+			}
+		}
+
+		&__counters {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			margin-bottom: 10px;
+			order: -1;
+
+			@include media(ms) {
+				order: 1;
+				border-bottom: 1px solid map-get($colors, lGrey);
+				margin-bottom: 0;
+				width: 100%;
+				max-width: 275px;
+				align-self: stretch;
+			}
+		}
+
+		&__passport-review {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			width: 100%;
+			font-size: 14px;
+			border: 1px solid map-get($colors, lGrey);
+			border-top: none;
+			padding: 20px;
+			position: relative;
+		}
+
+		&__switch-item {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			visibility: hidden;
+
+			&.is-active {
+				opacity: 1;
+				visibility: visible;
+				position: relative;
+			}
+		}
+
+		&__passport-details {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			span:nth-child(1) {
+				font-size: 14px;
+				font-weight: normal;
+			}
+
+			span:nth-child(2) {
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, grey2);
+			}
+		}
+
+		&__parameters {
+			margin-bottom: 10px;
+		}
+
+		&__owner-review {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			font-weight: 300;
+
+			span {
+				font-weight: normal;
+				margin-bottom: 18px;
+			}
+		}
+
+		&__history {
+			padding: 10px 0 0 45px;
+		}
+
+		&__open-history {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			span {
+				font-size: 14px;
+				font-weight: 300;
+				color: map-get($colors, grey2);
+			}
+		}
+
+		&__moto-history {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__history-item {
+			display: flex;
+			padding: 60px 0;
+			position: relative;
+			border-left: 1px dashed map-get($colors, grey);
+		}
+
+		&__history-year {
+			position: absolute;
+			bottom: -25px;
+			left: -25px;
+			width: 50px;
+			height: 50px;
+			background-color: map-get($colors, grey);
+			border-radius: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			font-size: 14px;
+			font-weight: normal;
+			color: map-get($colors, white);
+			z-index: 3;
+		}
+
+		&__history-start {
+			width: calc(100% + 20px + 45px + 20px);
+			height: 120px;
+			transform: translateX(-65px) translateY(20px);
+			display: flex;
+			background-color: map-get($colors, llGrey);
+			border-top: 1px dashed map-get($colors, grey);
+			margin-top: -20px;
+			z-index: 1;
+		}
+
+		&__history-decore {
+			width: 65px;
+			height: 60px;
+			border-right: 1px dashed map-get($colors, grey);
+		}
+
+		&__start {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: calc(100% - 65px);
+			height: 100%;
+			text-align: center;
+			font-size: 14px;
+			font-weight: 300;
+			color: map-get($colors, grey);
+		}
+}

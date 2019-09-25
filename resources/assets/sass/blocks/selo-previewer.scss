@@ -1,0 +1,60 @@
+
+.selo-previewer{
+  z-index: 512521521;
+
+  &__list{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 340px;
+    z-index: 512521521;
+    display: block;
+    flex-direction: column;
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-101%);
+    transition: transform 0.2s ease-out;
+    overflow: scroll;
+
+    &.is-active{
+      transform: translateX(0);
+    }
+  }
+
+  &__item{
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__open{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    background-color: red;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 512521521;
+  }
+
+  &__close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: blue;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,90 @@
+.add-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 900px;
+	width: 100%;
+	background-color: map-get($colors, white);
+	box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.15);
+
+	&--from-album {
+		.add-photo {
+			&__wrapper {
+				padding-top: 0;
+			}
+		}
+	}
+
+	&__wrapper-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 40px;
+		width: 100%;
+		height: 75px;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: normal;
+		color: map-get($colors, grey2);
+
+		span {
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__close {
+		align-self: flex-start;
+
+		svg {
+			width: 18px;
+			height: 18px;
+			fill: map-get($colors, grey);
+		}
+	}
+
+	&__download {
+		text-decoration: none;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 15px 5px;
+		background-color: map-get($colors, llGrey);
+
+		span {
+			font-size: 16px;
+			font-weight: 300;
+			color: map-get($colors, grey);
+		}
+
+		svg {
+			width: 21px;
+			height: 21px;
+			fill: map-get($colors, grey);
+			margin-right: 20px;
+		}
+	}
+
+	&__wrapper {
+		padding: 35px 55px 30px;
+	}
+
+	&__spacer {
+		width: 100%;
+		height: 1px;
+		background-color: map-get($colors, lGrey);
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		&--nt {
+			margin-top: 0;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

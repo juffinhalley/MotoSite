@@ -1,0 +1,13 @@
+.moto-achivments-gag-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: map-get($colors, lGrey);
+		border-radius: 100%;
+		overflow: hidden;
+		font-weight: 300;
+		font-size: 14px;
+		width: 110px;
+		height: 110px;
+		flex-shrink: 0;
+}

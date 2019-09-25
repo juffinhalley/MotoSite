@@ -1,0 +1,40 @@
+.block-reviews {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border-top: 1px solid map-get($colors, lGrey);
+	border-bottom: 1px solid map-get($colors, lGrey);
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding-left: 135px;
+		height: 45px;
+	}
+
+	&__title {
+		dispay: inline-flex;
+		align-items: center;
+		padding-right: 5px;
+		font-size: 14px;
+		font-weight: normal;
+		color: map-get($colors, dark);
+		width: calc(100% - 200px - 5px);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__button {}
+
+	&__showmore {}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 10px 10px 0 45px;
+	}
+}

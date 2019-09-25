@@ -1,0 +1,17 @@
+
+// Typography
+$main-font: "Arial", sans-serif;
+$font-size-base: #{vw(16px)};
+$line-height-base: 140%;
+
+// scroll
+$main-scroll-width: 12px;
+$main-scroll-color: map-get($colors, black);
+$main-thumb-color: map-get($colors, grey);
+$blocks-scroll-width: 12px;
+$blocks-scroll-color: map-get($colors, black);
+$blocks-thumb-color: map-get($colors, grey);
+
+// view
+$view-size: 1112px;
+$view-gap: 16px;

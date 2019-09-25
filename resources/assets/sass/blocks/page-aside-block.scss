@@ -1,0 +1,58 @@
+.page-aside-block {
+	width: 100%;
+	padding-right: 0;
+	flex-shrink: 0;
+	position: unset;
+	top: 0;
+	order: 2;
+
+	@include media(defp) {
+		position: sticky;
+		top: 100px;
+		width: 240px;
+		padding-right: 18px;
+		order: 1;
+	}
+
+	@include media(lg) {
+		width: 288px;
+		padding-right: 32px;
+	}	
+
+	&--nopd {
+		padding-right: 0;
+
+		@include media(defp) {
+			padding-right: 0;
+			width: 240px;
+		}
+
+		@include media(lg) {
+			padding-right: 0;
+			width: 256px;
+		}	
+	}
+
+	& + .page-content {
+		max-width: 100%;
+
+		@include media(defp) {
+			max-width: calc(100% - 240px);
+		}
+
+		@include media(lg) {
+			max-width: calc(100% - 286px);
+		}
+
+		&--lg {
+
+			@include media(defp) {
+				max-width: calc(100% - 240px);
+			}
+
+			@include media(lg) {
+				max-width: calc(100% - 256px);
+			}
+		}
+	}
+}

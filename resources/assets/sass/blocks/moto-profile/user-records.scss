@@ -1,0 +1,147 @@
+.user-records {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 825px;
+	border: 1px solid map-get($colors, lGrey);
+	border-top: none;
+
+	&__info-row {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-bottom: 5px;
+		align-items: center;
+		background-color: map-get($colors, llGrey);
+		border-bottom: 1px solid map-get($colors, lGrey);
+
+		@include media(ms) {
+			flex-direction: row;
+			padding-bottom: 0;
+		}
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 300;
+		font-size: 16px;
+		padding: 10px 55px;
+		margin-bottom: 5px;
+		color: inherit;
+		position: relative;
+		text-decoration: none;
+
+		@include media(ms) {
+			margin-bottom: 0;
+			border-right: 1px solid map-get($colors, lGrey);
+		}
+
+		&:hover {
+			color: inherit;
+			cursor: pointer;
+
+			.title-hover {
+				position: absolute;
+				left: -1px;
+				top: -1px;
+				width: calc(100% + 2px);
+				height: calc(100% + 2px);
+				border: 1px solid map-get($colors, grey);
+			}
+		}
+	}
+
+	&__info-row-wrapper {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		padding: 0 15px;
+	}
+
+	&__number-of-records {
+		display: flex;
+		align-items: center;
+		font-weight: 300;
+		font-size: 12px;
+
+		span {
+			margin-right: 5px;
+		}
+	}
+
+	&__sorting-widget {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;
+	}
+
+	&__group-wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 0 10px 0 20px;
+
+		&:nth-child(2) {
+			padding-top: 20px;
+			.user-records {
+				&__title-wrapper {
+					margin-bottom: 25px;
+				}
+			}
+		}
+
+		&:last-child {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__title-wrapper {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 30px;
+
+		@include media(ms) {
+			flex-direction: row;
+		}
+	}
+
+	&__content-title {
+		display: flex;
+		font-size: 14px;
+		font-weight: normal;
+		justify-content: center;
+		width: 100%;
+		padding-bottom: 10px;
+		border-bottom: 1px solid map-get($colors, grey);
+
+		@include media(ms) {
+			flex-basis: 500px;
+			margin-right: auto;
+			width: auto;
+			justify-content: flex-start;
+			padding-left: 25px;
+		}
+	}
+
+	&__add-records-button {
+		flex-grow: 0;
+		order: -1;
+		margin-bottom: 20px;
+
+		@include media(ms) {
+			align-self: flex-end;
+			margin-bottom: 0;
+			order: 1;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+}

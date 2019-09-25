@@ -1,0 +1,193 @@
+.page-header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	&__top {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		height: 70px;
+		align-items: center;
+		padding: 8px 0;
+
+		@include media(xl) {
+			height: vw(70px);
+			padding: vw(8px) 0;
+		}
+
+		@include media(dt) {
+			height: 70px;
+			padding: 8px 0;
+		}
+	}
+
+	&__submenu {
+		display: flex;
+		padding-right: 12px;
+		overflow: hidden;
+		width: auto;
+
+		@include media(xl) {
+			width: vw(825px);
+			padding-right: vw(12px);
+		}
+
+		@include media(dt) {
+			width: 825px;
+			padding-right: 12px;
+		}
+	}
+
+	&__submenu-item {
+		margin-right: 10px;
+
+		&:nth-child(1) {
+			.page-header {
+				&__submenu-link {
+					padding-left: 0;
+				}
+			}
+		}
+		
+		&:nth-last-child(1) {
+			margin-right: 0;
+		}
+	}
+
+	&__submenu-link {
+		color: map-get($colors, dark);
+		font-size: 16px;
+		text-decoration: none;
+		display: flex;
+		padding: 10px;
+		line-height: 110%;
+
+		@include media(xl) {
+			font-size: vw(16px);
+		}
+
+		@include media(dt) {
+			font-size: 16px;
+		}
+
+		&:hover {
+			color: map-get($colors, orange);
+
+			span {
+				background-size: 100% 100%;
+			}
+		}
+
+		&:active {
+			color: map-get($colors, black);
+			transition: color 0s ease;
+		}
+
+		&.is-active {
+			color: map-get($colors, orange);
+
+			span {
+				background-size: 100% 100%;
+			}
+		}
+
+		span {
+			background-image: linear-gradient(transparent calc(100% - 1px), map-get($colors, orange) 1px);
+			background-repeat: no-repeat;
+			background-size: 0 100%;
+			transition: background-size 0.2s ease-in-out;
+		}
+	}
+
+	&__lng {
+		margin: 0 30px;
+
+		@include media(xl) {
+			margin: 0 vw(30px);
+		}
+
+		@include media(dt) {
+			margin: 0 30px;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		margin-left: auto;
+	}
+
+	&__contact-link {
+		width: 196px;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		color: map-get($colors, dark);
+		height: 70px;
+		font-size: 16px;
+
+		@include media(xl) {
+			width: vw(196px);
+			height: vw(70px);
+			padding: vw(10px);
+			font-size: vw(16px);
+		}
+
+		@include media(dt) {
+			width: 196px;
+			height: 70px;
+			padding: 10px;
+			font-size: 16px;
+		}
+
+		&:hover {
+			color: map-get($colors, dark);
+		}
+	}
+
+	&__call-button {
+		width: 216px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		height: 70px;
+		cursor: pointer;
+		background-color: map-get($colors, lOrange);
+
+		@include media(xl) {
+			width: vw(216px);
+			height: vw(70px);
+		}
+
+		@include media(dt) {
+			width: 216px;
+			height: 70px;
+		}
+	}
+
+	&__call-button-content {
+		font-size: 14px;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		line-height: 100%;
+		color: map-get($colors, orange);
+
+		@include media(xl) {
+			font-size: vw(14px);
+		}
+
+		@include media(dt) {
+			font-size: 14px;
+		}
+	}
+
+	&__bottom {
+		width: 100%;
+	}
+}

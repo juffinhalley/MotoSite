@@ -1,0 +1,24 @@
+
+.paper-button {
+	position: relative;
+	overflow: hidden;
+	user-select: none;
+	transition: background-color 0.2s ease, color 0.2s ease;
+
+	& > * {
+		&:nth-child(1) {
+			position: relative;
+			z-index: 15;
+		}
+	}
+
+	&--orange {
+		&:hover {
+			background-color: #ffebc2;
+		}
+		
+		.paper-ripple {
+			color: #ffc344;
+		}
+	}
+}
