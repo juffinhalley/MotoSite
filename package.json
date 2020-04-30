@@ -25,7 +25,7 @@
         "file-loader": "^1.1.11",
         "gsap": "^1.20.4",
         "imagemin-webpack-plugin": "^2.3.0",
-        "jquery": "^3.3.1",
+        "jquery": "^3.5.0",
         "jquery-validation": "^1.17.0",
         "laravel-mix": "^2.1.14",
         "lodash": "^4.17.4",
