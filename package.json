@@ -28,7 +28,7 @@
         "jquery": "^3.3.1",
         "jquery-validation": "^1.17.0",
         "laravel-mix": "^2.1.14",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.21",
         "malihu-custom-scrollbar-plugin": "3.1.5",
         "noty": "^3.2.0-beta",
         "paper-ripple": "^0.3.0",
